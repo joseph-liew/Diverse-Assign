@@ -7,19 +7,19 @@ Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Divers
 ## Manual and Code ##
 
 Links to:
-- [*Manual.*](XXXXX) 
+- [*Manual. COMING SOON*](XXXXX) 
 > How-to-use guide.
 
-- [*UI-features.*](XXXXX)
+- [*UI-features. COMING SOON*](XXXXX)
 > Documentation of intuitive UI design features.
 
-- [*Compiling-notes.*](XXXXX)
+- [*Compiling-notes. COMING SOON*](XXXXX)
 > Quick note before you compile.
 
-- [*Main-code.*](XXXXX) 
+- [*Main-code.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Main-code) 
 > Ready to use in any IDE, notebook, command line, or compiled into an executable. 
 
-- [*Debug-code.*](XXXXX)
+- [*Debug-code.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Debug-code)
 >  Debug-code is identical to the main-code. But with additional lines added to trace important steps. Useful for debugging or understanding how the main-code works.
 
 ## Abstract ##
@@ -160,4 +160,3 @@ Corrections to documentation or code are greatly appreciated :)
 <a name="SW"></a>Shannon, C. E., and Weaver, W., 1949. The Mathematical Theory of Communication. Urbana: University of Illinois Press.
 [*Article extract*](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
