@@ -22,6 +22,9 @@ Links to:
 - [*Debug-code.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Debug-code)
 >  Debug-code is identical to the main-code. But with additional lines added to trace important steps. Useful for debugging or understanding how the main-code works.
 
+- [*Sample-data.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Sample-data)
+>  Folder for sample data. Include sample working data, and output data, for validation. ('Output data' = an example of what is produced after the programme assigns groups to the sample working data.) 
+
 ## Abstract ##
 
 **Diverse-Assigner** is a programme designed to assign members/items into groups, with maximum diversity. In other words, each group will have the maximum diversity possible. The programme UI aims to be intuitive and accessible.
@@ -35,7 +38,7 @@ Links to:
 
 ### Software Engineering Features ### 
 
-**Diverse-Assigner** is different from traditional AI approach. This yields several advantages.
+**Diverse-Assigner** is different from traditional AI approach used in assignment. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
 - Unlike traditional approach, problem is simplified into a maximum value problem. 
 - Our approach: Simulated Annealing, driven by a production-reduction-approach inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) for more info.)
