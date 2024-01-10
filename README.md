@@ -2,7 +2,7 @@
 
 Version 0.2.2a. January 2024
 
-Licence: Open-source [*GNU GPL Version 3*](https://www.gnu.org/licenses/gpl-3.0.html)
+Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Diverse-Assign/blob/main/LICENSE)
 
 ## Manual and Code ##
 
