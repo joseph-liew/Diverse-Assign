@@ -29,7 +29,7 @@ Links to:
 ### Ready to Use. Ready to Compile. Intuitive UI ### 
 - Self-guided, text-driven UI. Easily used in any IDE, notebook or command line.
 - Accessible features include input: validity checks, assignment progress indicator, estimated assignment completion time.
-- Programme can be immediately compiled into an executable, as is. This can make the software accessbile with no-code experience.
+- Programme can be immediately compiled into an executable, as is. This can make the software accessible with no-code experience.
 - Our aim is anyone who know what is a CSV files to understand the software intuitively. 
 - *Forthcoming:* Installable executable to be available on GitHub.
 
@@ -38,9 +38,9 @@ Links to:
 **Diverse-Assigner** is different from traditional AI approach. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
 - Unlike traditional approach, problem is simplified into a maximum value problem. 
-- Our approach: Simulated Annealing, driven by a production-reduction-approach inspired by MAC (Maintaining Arc Consistency) algorithim in CSP. (See [*Algorithm*](#algo) for more info.)
+- Our approach: Simulated Annealing, driven by a production-reduction-approach inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) for more info.)
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
-- Other use cases: Ordinal/Nominal agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studties.
+- Other use cases: Ordinal/Nominal agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies.
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
 - Efficiency and optimisation might also be better than CSP approach (Needs study to ascertain.) 
 
@@ -67,9 +67,9 @@ There are other possible use cases. It's particularly useful in:
 ## Use Cases <a name="use"></a> 
 - Assigning participants/students of different backgrounds into breakouts/classes. 
 - Creating diverse groups for ice-breaking activities.
-- Objective and impartial assigment of people / items into groups.
-- Assigning experimnents in A/B experiments to different customer segments.
-- Assigning compounds in combinatorial chemisty and pharmaceutical interaction experiments.
+- Objective and impartial assessment of people / items into groups.
+- Assigning experiments in A/B experiments to different customer segments.
+- Assigning compounds in combinatorial chemistry and pharmaceutical interaction experiments.
 - Homogenous admixture of multiple dependent variables for multi-factor experiments.
 - Other uses: Programme is ordinal/nominal agnostic. It can be easily used to assign anything into diverse groups. 
 
@@ -82,7 +82,7 @@ Objectivity is another concern. For e.g.:
 - Or should we unbalanced admixture of gender education?
 - If so, how much?
 
-This is mentally tedious. Furthermore, as a CSP optimisation implemenation, this is very challenging to implement and optimise to cover *N* number of profile features.
+This is mentally tedious. Furthermore, as a CSP optimisation implementation, this is very challenging to implement and optimise to cover *N* number of profile features.
 
 <a name="ADS"></a> 
 ## Aggregate Diversity Score ##
@@ -119,42 +119,42 @@ The Aggregate Diversity Score serves as a convenient value measure to assign gro
 7. If the rows iteration is complete, or the deque is empty, end the 'For' loop. Solution is obtained.
 8. Check whether the pointer row is in the collection of swapped indices. If no, continue to swap. Else skip this row, since it's already swapped.
 9. If the pointer row value is different from the row, swap the values. Else popleft and append the pointer to the end of the deque. (So that this pointer can be eventually used for another row.)
-10. Using Simulated Annealing, accept the swap if swap yields a greater total diversity, or based on the annealing probaility, reject the swap.
+10. Using Simulated Annealing, accept the swap if swap yields a greater total diversity, or based on the annealing probability, reject the swap.
 11. If a swap is rejected, reverse the swaps and pops and appends. I.e. revert data to before the swap.
 12. Else, transfer the row index and pointer index in this iteration to the collection of swapped row indices.
 13. Continue iterations of each row, until 'For' loop breaks at step 7.
 14. Repeat steps 1 to 13 over *k* instances. Pick the highest scoring instance as solution. Users can input the value for *k*. (At the expense of time.)
 
-In step 10, memoisation is used to minimise duplicate calculation of Aggregate Diversity Scores for groups that are not invovled in the swapping. Memoisation is also employed in other areas of the programme to conserve memory and time (steps 6 to 12). 
+In step 10, memoisation is used to minimise duplicate calculation of Aggregate Diversity Scores for groups that are not involved in the swapping. Memoisation is also employed in other areas of the programme to conserve memory and time (steps 6 to 12). 
 
 In step 10, Simulated Annealing is used to reduce the likelihood of ending up with a local minimum. This is crucial, since maximum-value approach is not a complete solution. Global maximum might not be achieved before the solution is complete. However, depending on the user's use case, a complete assignment is usually unnecessary. Unless the user is works with a very large number of rows or features. In such scenarios, the user might be satisfied with tweaking the cooling rate for the Simulated Annealing, balancing the needs time and completeness.
 
-Steps 4 to 13 (excluding 10) is designed to reduce the problem and complexity size with every iteration. It is inspired MAC (Maintaining Arc Consistency) algorithim in CSP. While the overall algorithm is not CSP, the problem is reduced with each iteration.
+Steps 4 to 13 (excluding 10) is designed to reduce the problem and complexity size with every iteration. It is inspired MAC (Maintaining Arc Consistency) algorithm in CSP. While the overall algorithm is not CSP, the problem is reduced with each iteration.
 
-Because the solution is not compelte, there is a step 14. This is to further minimise the chance of getting stuck on a local maximum. 
+Because the solution is not complete, there is a step 14. This is to further minimise the chance of getting stuck on a local maximum. 
 
 ## Limitations ##
 - As a non-CSP approach, users cannot introduce CSPs, such as "Every group must have at least one person from R&D."
 > However, it is possible to adapt the code to increase the weight of certain columns. This is useful to increase representation of minority groups.
 
-- While current implementation maximises input, the solution is not complete. And this could mean we do not arrive at the global maximium. I.e. it's possible to get stuck on a local minimum.
-> Potentially, the "MAC-like" problem reduction could be swapped with a two-agent adverserial search, to obtain a complete solution. (I.e. we are sure the global maximum was achieved.)
+- While current implementation maximises input, the solution is not complete. And this could mean we do not arrive at the global maximum. I.e. it's possible to get stuck on a local minimum.
+> Potentially, the "MAC-like" problem reduction could be swapped with a two-agent adversarial search, to obtain a complete solution. (I.e. we are sure the global maximum was achieved.)
 
 - As the number of rows or features increases, processing time can increase significantly.
-> This could be addressed by tweaking the Simulated Annealinmg  cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stucked at a local maximium.)
+> This could be addressed by tweaking the Simulated Annealing cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stuck at a local maximum.)
 
 ## Collaboration ##
 Code is open-source, GPL-3. Anyone is free to improve the programme or adapt the software in other / their projects, subject to GPL-3 licence. 
 
 Feel free to collab and contribute!
 
-Corrections to documetation or code are greatly appreciated :)
+Corrections to documentation or code are greatly appreciated :)
 
 ## Future Work ##
 - Installable executable to be available on GitHub.
-- Improve efficiency by mimimising list generation through memoisation.
+- Improve efficiency by minimising list generation through memoisation.
 - Refactor code into OOP for easier maintenance.
-- Branch project into a less verbose UI and reduced options. While more options are great for technical users, these can be easily tweaked in the code. Non-technical users may find the programme more accessible if some options are invisble defaults.
+- Branch project into a less verbose UI and reduced options. While more options are great for technical users, these can be easily tweaked in the code. Non-technical users may find the programme more accessible if some options are invisible defaults.
 
 ## References ##
 <a name="SW"></a>Shannon, C. E., and Weaver, W., 1949. The Mathematical Theory of Communication. Urbana: University of Illinois Press.
