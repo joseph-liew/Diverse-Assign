@@ -1,28 +1,40 @@
 # **Diverse-Assigner**
 
 Version 0.2.2a. January 2024
-Licence: Open-source[*GNU GPL Version 3*](https://www.gnu.org/licenses/gpl-3.0.html)
-Copyright: Joseph Liew (Liew Guangzhi Joseph)
+
+Licence: Open-source [*GNU GPL Version 3*](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ## Manual and Code ##
+
 Links to:
-- [*Manual.*](XXXXX) How-to-use guide.
-- [*UI-features.*](XXXXX) Documentation of intuitive UI design features.
-- [*Compiling-notes.*](XXXXX) Quick note before you compile.
-- [*Main-code.*](XXXXX) Ready to use in any IDE, notebook, command line, or compiled into an executable. 
-- [*Debug-code.*](XXXXX) Debug-code is identical to the main-code. But with additional lines added to trace important steps. Useful for debugging or understanding how the main-code works.
+- [*Manual.*](XXXXX) 
+> How-to-use guide.
+
+- [*UI-features.*](XXXXX)
+> Documentation of intuitive UI design features.
+
+- [*Compiling-notes.*](XXXXX)
+> Quick note before you compile.
+
+- [*Main-code.*](XXXXX) 
+> Ready to use in any IDE, notebook, command line, or compiled into an executable. 
+
+- [*Debug-code.*](XXXXX)
+>  Debug-code is identical to the main-code. But with additional lines added to trace important steps. Useful for debugging or understanding how the main-code works.
 
 ## Abstract ##
+
 **Diverse-Assigner** is a programme designed to assign members/items into groups, with maximum diversity. In other words, each group will have the maximum diversity possible. The programme UI aims to be intuitive and accessible.
 
-**Ready to Use. Ready to Compile. Intuitive UI**
+### Ready to Use. Ready to Compile. Intuitive UI ### 
 - Self-guided, text-driven UI. Easily used in any IDE, notebook or command line.
 - Accessible features include input: validity checks, assignment progress indicator, estimated assignment completion time.
 - Programme can be immediately compiled into an executable, as is. This can make the software accessbile with no-code experience.
 - Our aim is anyone who know what is a CSV files to understand the software intuitively. 
 - *Forthcoming:* Installable executable to be available on GitHub.
 
-**Software Engineering Features** 
+### Software Engineering Features ### 
+
 **Diverse-Assigner** is different from traditional AI approach. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
 - Unlike traditional approach, problem is simplified into a maximum value problem. 
@@ -32,9 +44,10 @@ Links to:
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
 - Efficiency and optimisation might also be better than CSP approach (Needs study to ascertain.) 
 
-Also, the simple implementation has potential to introduce weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation problem, the solution is relatively easy to fine-tune to *N* number of features.
+Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation problem, the solution is relatively easy to fine-tune to *N* number of features.
 
-**Objective Solution** 
+### Objective Solution ### 
+
 **Diverse-Assigner** saves the headache and time of making groups diverse by hand. 
 - It's also mentally tedious to assess diversity by sight.
 - Assigning by hand is also subjective. If we want the maximum diversity, should a group have balanced genders or balanced education level?
@@ -51,7 +64,7 @@ There are other possible use cases. It's particularly useful in:
 - Approximating homogenous admixture of items into groups.
 (See [*Use Cases*](#use) for more info.)
 
-##<a name="use"></a> Use Cases ##
+## Use Cases <a name="use"></a> 
 - Assigning participants/students of different backgrounds into breakouts/classes. 
 - Creating diverse groups for ice-breaking activities.
 - Objective and impartial assigment of people / items into groups.
@@ -71,40 +84,20 @@ Objectivity is another concern. For e.g.:
 
 This is mentally tedious. Furthermore, as a CSP optimisation implemenation, this is very challenging to implement and optimise to cover *N* number of profile features.
 
-##<a name="ADS"></a> Aggregate Diversity Score##
+<a name="ADS"></a> 
+## Aggregate Diversity Score ##
 
-The Shannon-Weaver index is a measure in information theory. It is used to quantify the diversity of information in a dataset. [*Shannon & Weaver, 1949*](#SW) It has also been coopted as a diversity measure in ecology and population genetic studies 
+The Shannon-Weaver index is a measure in information theory. It is used to quantify the diversity of information in a dataset. ([*Shannon & Weaver, 1949*](#SW)) It has also been coopted as a diversity measure in ecology and population genetic studies 
 
 The measure is defined as:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <msup>
-    <mi>H</mi>
-    <mo>&#x2032;</mo>
-  </msup>
-  <mo>=</mo>
-  <mo>&#x2212;<!-- − --></mo>
-  <munderover>
-    <mo movablelimits="false">&#x2211;<!-- ∑ --></mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>x</mi>
-      <mo>=</mo>
-      <mn>1</mn>
-    </mrow>
-    <mi>S</mi>
-  </munderover>
-  <msub>
-    <mi>p</mi>
-    <mi>x</mi>
-  </msub>
-  <mi>ln</mi>
-  <mo>&#x2061;<!-- ⁡ --></mo>
-  <msub>
-    <mi>p</mi>
-    <mi>i</mi>
-  </msub>
-</math>
 
-where *H′* is the Shannon-Weaver index, *x* are values sharing a common value, *p<sub>x</sub>* is the proportion of *x* values in the sample, and *ln p<sub>x</sub>* is the natural logarithm of this proportion. This yeilds a positive score. The greater score, the higher greater the diversity in a sample.
+$$
+H^{\prime}=-{\displaystyle \sum_{n=1}^n\left({pi}^{*} \ln\ {p}_{\mathrm{i}}\right)}
+$$
+
+> where *H′* is the Shannon-Weaver index, *x* are values sharing a common value, *p<sub>x</sub>* is the proportion of *x* values in the sample, and *ln p<sub>x</sub>* is the natural logarithm of this proportion. 
+
+This index yields a positive score. The greater score, the higher greater the diversity in a sample.
 
 In this programme, we propose an *Aggregate Diversity Score* to measure whether a group has, in aggregate, a more diverse profile of features. Aggregate Diversity Score is adapted from the Shannon-Weaver index.
 
@@ -114,7 +107,8 @@ By taking the aggregate Shannon-Weaver index of all columns in a group, we obtai
 
 The Aggregate Diversity Score serves as a convenient value measure to assign groups using maximum-value algorithm. Importantly, we can try different group assignments, and take the grand sum of Aggregate Diversity Score across groups. Each solution of group assignments yields a different grand sum. The optimal solution is where grand sum is the global maximum.
 
-##<a name="algo"></a> Algorithm ##
+<a name="algo"></a>
+## Algorithm ##
 
 1. First, assign all rows in the data evenly into groups.
 2. Split the data into groups (pandas dataframe subsets).   
@@ -125,32 +119,29 @@ The Aggregate Diversity Score serves as a convenient value measure to assign gro
 7. If the rows iteration is complete, or the deque is empty, end the 'For' loop. Solution is obtained.
 8. Check whether the pointer row is in the collection of swapped indices. If no, continue to swap. Else skip this row, since it's already swapped.
 9. If the pointer row value is different from the row, swap the values. Else popleft and append the pointer to the end of the deque. (So that this pointer can be eventually used for another row.)
-10. Using Simulated Annealing, accept the swap if swap yeilds a greater total diversity, or based on the annealing probaility, reject the swap.
+10. Using Simulated Annealing, accept the swap if swap yields a greater total diversity, or based on the annealing probaility, reject the swap.
 11. If a swap is rejected, reverse the swaps and pops and appends. I.e. revert data to before the swap.
 12. Else, transfer the row index and pointer index in this iteration to the collection of swapped row indices.
 13. Continue iterations of each row, until 'For' loop breaks at step 7.
+14. Repeat steps 1 to 13 over *k* instances. Pick the highest scoring instance as solution. Users can input the value for *k*. (At the expense of time.)
 
 In step 10, memoisation is used to minimise duplicate calculation of Aggregate Diversity Scores for groups that are not invovled in the swapping. Memoisation is also employed in other areas of the programme to conserve memory and time (steps 6 to 12). 
 
-In step 10, Simulated Annealing is used to reduce the likelihood of ending up with a local minimum. This is crucial, since maximum-value approach is not a complete solution. However, depending on the user's use case, a complete assignment is usually unnecessary. Unless the user is works with a very large number of rows or features. In such scenarios, the user might be satisfied with tweaking the cooling rate for the Simulated Annealing, balancing the needs time and completeness.
+In step 10, Simulated Annealing is used to reduce the likelihood of ending up with a local minimum. This is crucial, since maximum-value approach is not a complete solution. Global maximum might not be achieved before the solution is complete. However, depending on the user's use case, a complete assignment is usually unnecessary. Unless the user is works with a very large number of rows or features. In such scenarios, the user might be satisfied with tweaking the cooling rate for the Simulated Annealing, balancing the needs time and completeness.
 
 Steps 4 to 13 (excluding 10) is designed to reduce the problem and complexity size with every iteration. It is inspired MAC (Maintaining Arc Consistency) algorithim in CSP. While the overall algorithm is not CSP, the problem is reduced with each iteration.
 
-Because the solution is not compelte, there is a step 14:
-
-14. Repeat steps 1 to 13 over *k* instances. Pick the highest scoring instance as solution. Users can input the value for *k*. (At the expense of time.)
-
-This is to further minimise the chance of getting stuck on a local maximum. 
+Because the solution is not compelte, there is a step 14. This is to further minimise the chance of getting stuck on a local maximum. 
 
 ## Limitations ##
 - As a non-CSP approach, users cannot introduce CSPs, such as "Every group must have at least one person from R&D."
-- However, it is possible to adapt the code to increase the weight of certain columns. This is useful to increase representation of minority groups.
+> However, it is possible to adapt the code to increase the weight of certain columns. This is useful to increase representation of minority groups.
 
-- While current implementation maximises input, the solution is not complete. I.e. it's possible to get stuck on a local minimum.
-- Potentially, the "MAC-like" problem reduction could be swapped with a two-agent adverserial search, to obtain a complete solution. (I.e. definite global maximum.)
+- While current implementation maximises input, the solution is not complete. And this could mean we do not arrive at the global maximium. I.e. it's possible to get stuck on a local minimum.
+> Potentially, the "MAC-like" problem reduction could be swapped with a two-agent adverserial search, to obtain a complete solution. (I.e. we are sure the global maximum was achieved.)
 
 - As the number of rows or features increases, processing time can increase significantly.
-- This could be addressed by tweaking the Simulated Annealinmg  cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stucked at a local maximium.)
+> This could be addressed by tweaking the Simulated Annealinmg  cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stucked at a local maximium.)
 
 ## Collaboration ##
 Code is open-source, GPL-3. Anyone is free to improve the programme or adapt the software in other / their projects, subject to GPL-3 licence. 
