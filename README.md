@@ -95,7 +95,7 @@ The Shannon-Weaver index is a measure from information theory. It is used to qua
 The measure is defined as:
 
 $$
-H^{\prime}=-{\displaystyle \sum_{n=1}^n\left({px}^{*} \ln\ {p}_{\mathrm{x}}\right)}
+H^{\prime}=-{\displaystyle \sum_{n=1}^n\left({p}_{\mathrm{x}}^{*} \ln\ {p}_{\mathrm{x}}\right)}
 $$
 
 > where *H′* is the Shannon-Weaver index, *x* are values sharing a common value, *p<sub>x</sub>* is the proportion of *x* values in the sample, and *ln p<sub>x</sub>* is the natural logarithm of this proportion. 
