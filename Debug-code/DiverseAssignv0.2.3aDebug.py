@@ -377,8 +377,8 @@ for i in range(instance_count):
     
     print("Progress on current solution 100%")
     print()
-    print(f"Solution Number {solution_number}'s initial diversity score was {initial_diversity}")
-    print(f"Solution Number {solution_number}'s final diversity score was {best_diversity}")    
+    print(f"Solution Number {solution_number:,}'s initial diversity score was {initial_diversity}")
+    print(f"Solution Number {solution_number:,}'s final diversity score was {best_diversity}")    
     
     if i == 0:
         stopwatch.stop()
@@ -408,7 +408,7 @@ data = best_solution
 # %% Solution found screen
 
 print()
-print(f"{instance_count} number of solutions completed. The best solution picked is Solution Number {picked_solution}. The best diversity score acheived was {best_diversity}")
+print(f"{instance_count} number of solutions completed. The best solution picked is Solution Number {picked_solution:,}. The best diversity score achieved was {best_diversity}")
 # debug_print("best_solution picked", picked_solution, True)
 # debug_print("achieved best_diversity", best_diversity, True)
 
