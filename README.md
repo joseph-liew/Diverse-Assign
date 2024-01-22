@@ -189,7 +189,7 @@ Regardless of the search heuristic, the problem size (or search space) has to be
 
 The programme caps the solutions to ***(<sub>n</sub>C<sub>2</sub>*** instances. The rationale is the algorithm does pair-wise swapping. Hence, the optimal solution should be within ***(<sub>n</sub>C<sub>2</sub>***. This ignores that sequence of possible swaps are randomly generated and non-exhaustive. It also ignores alternative solutions generated during annealing is probable. 
 
-Hence, the actual optimal solution might be _near_ ***(<sub>n</sub>C<sub>2</sub>*** number of instances generated. This was also seen in small sample experiments. However, the programme still uses ***(<sub>n</sub>C<sub>2</sub>*** as a relaxed heuristic that is computationally light and easy to scale to any *N* number of features. 
+Hence, the actual optimal solution might be _near_ ***(<sub>n</sub>C<sub>2</sub>*** number of instances generated. This was also seen in small sample experiments. However, the programme still uses ***(<sub>n</sub>C<sub>2</sub>*** as a relaxed heuristic. Depending on the use case, the difference between the best solution picked by the programme and the most diverse assignments could be acceptable to users. Computing a more accurate heuristic has diminishing returns. Currently, ***(<sub>n</sub>C<sub>2</sub>*** is preferred. given it is computationally light, and easy to scale to any *N* number of features. 
 
 ## Limitations ##
 
