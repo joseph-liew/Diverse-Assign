@@ -1,6 +1,6 @@
 # **Diverse-Assign**
 
-Version 0.2.2a. January 2024
+Version 0.2.3a. January 2024
 
 Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Diverse-Assign/blob/main/LICENSE)
 
@@ -27,7 +27,7 @@ Links to:
 
 ## Abstract ##
 
-**Diverse-Assign** is a programme designed to assign members/items into groups, with maximum diversity. In other words, each group will have the maximum diversity possible. The programme UI aims to be intuitive and accessible.
+**Diverse-Assign** is a programme designed to maximise diversity in assigning members/items into groups. In other words, we aim to achieve high diversity among groups. The programme UI also aims to be intuitive and accessible.
 
 ### Ready to Use. Ready to Compile. Intuitive UI ### 
 - Self-guided, text-driven UI. Easily used in any IDE, notebook or command line.
@@ -36,20 +36,42 @@ Links to:
 - Our aim is anyone who know what is a CSV file to use the software intuitively. 
 - *Forthcoming:* Installable executable to be available on GitHub.
 
-### Software Engineering Features ### 
+<a name="use"></a> 
+### Use Cases ### 
+- Assigning participants/students of different backgrounds into breakouts/classes. 
+- Creating diverse groups for ice-breaking activities.
+- Objective and impartial assignment of people / items into groups.
+- Assigning experiments in A/B experiments to different customer segments.
+- Assigning compounds in combinatorial chemistry and pharmaceutical interaction experiments.
+- Homogenous admixture of multiple dependent variables for multi-factor experiments.
+- Other uses: Programme is ordinal/nominal value agnostic. It can be easily used to assign anything into diverse groups. 
 
-**Diverse-Assign** is different from traditional AI approach used in assignment. This yields several advantages.
+### Inspiration ###
+**Diverse-Assign** was inspired by a frequent challenge in education. When designing workshops/classrooms, educators/teachers often assign participants/students into groups by hand. This is tedious, especially if the participant/student profile has many features.
+
+Objectivity is another concern. For e.g.:
+- If we can't have equal representation of genders and education levels in each group, which group should have equal gender representation? 
+- Which should have equal education level representation? 
+- Or should we unbalanced admixture of gender education?
+- If so, how much?
+
+This is mentally tedious. Furthermore, when we try to use CSP optimisation implementation, this is very challenging to implement and optimise. How should we write a CSP algorithm to cover *N* number of profile features.
+
+
+## Software Engineering Features ## 
+
+**Diverse-Assign** is different from the conventional AI approach used in group assignment. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
-- Unlike traditional approach, problem is simplified into a maximum value problem. 
-- Our approach: Simulated Annealing, driven by a production-reduction-approach inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) for more info.)
+- Unlike traditional approach, the problem is simplified into maximum value problem. 
+- Our approach: Simulated Annealing, driven by a production reduction and heuristics inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) and [*Heuristics*](#heu)for more info.)
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
-- Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies.
+- Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies. (See [*Use Cases*](#use).)    
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
 - Efficiency and optimisation might also be better than CSP approach (Needs study to ascertain.) 
 
-Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation algorithm, the programme is relatively easy to fine-tune to *N* number of features.
+Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation algorithm, the programme is relatively easy to scale fine-tune to any *N* number of features.
 
-### Objective Solution ### 
+## Objective Solution ##
 
 **Diverse-Assign** saves the headache and time of making groups diverse by hand. 
 - It's also mentally tedious to assess diversity by sight.
@@ -67,35 +89,16 @@ There are other use cases. It's particularly useful in:
 - Approximating homogenous admixture of items into groups.
 (See [*Use Cases*](#use) for more info.)
 
-## Use Cases <a name="use"></a> 
-- Assigning participants/students of different backgrounds into breakouts/classes. 
-- Creating diverse groups for ice-breaking activities.
-- Objective and impartial assignment of people / items into groups.
-- Assigning experiments in A/B experiments to different customer segments.
-- Assigning compounds in combinatorial chemistry and pharmaceutical interaction experiments.
-- Homogenous admixture of multiple dependent variables for multi-factor experiments.
-- Other uses: Programme is ordinal/nominal value agnostic. It can be easily used to assign anything into diverse groups. 
-
-## Inspiration ##
-**Diverse-Assign** was inspired by a frequent challenge in education. When designing workshops/classrooms, educators/teachers often assign participants/students into groups by hand. This is tedious, especially if the participant/student profile has many features.
-
-Objectivity is another concern. For e.g.:
-- If we can't have equal representation of genders and education levels in each group, which group should have equal gender representation? 
-- Which should have equal education level representation? 
-- Or should we unbalanced admixture of gender education?
-- If so, how much?
-
-This is mentally tedious. Furthermore, when we try to use CSP optimisation implementation, this is very challenging to implement and optimise. How should we write a CSP algorithm to cover *N* number of profile features.
 
 <a name="ADS"></a> 
 ## Aggregate Diversity Score ##
 
-The Shannon-Weaver index is a measure from information theory. It is used to quantify the diversity of information in a dataset. ([*Shannon & Weaver, 1949*](#SW)) It has also been coopted as a diversity measure in ecology and population genetic studies 
+In information theory, the Shannon-Weaver index is a measure of entropy. It is used to quantify the entropy of information within a dataset. ([*Shannon & Weaver, 1949*](#SW)) The index has also been coopted into diversity measure of groups in ecology and population genetic studies. 
 
 The measure is defined as:
 
 $$
-H^{\prime}=-{\displaystyle \sum_{n=1}^n\left({p}_{\mathrm{x}}^{*} \ln\ {p}_{\mathrm{x}}\right)}
+\ H^{\prime} = -\sum_{n=1}^{n} \left(p_{\mathrm{x}}^{*} \ln p_{\mathrm{x}}\right) \
 $$
 
 > where *H′* is the Shannon-Weaver index, *x* are values sharing a common value, *p<sub>x</sub>* is the proportion of *x* values in the sample, and *ln p<sub>x</sub>* is the natural logarithm of this proportion. 
@@ -117,36 +120,90 @@ The Aggregate Diversity Score serves as a convenient value measure to assign gro
 2. Split the data into groups (pandas dataframe subsets).   
 3. Determine the [*Aggregate Diversity Score* ](#ADS) of each group.
 4. Generate a deque queue of shuffled row indices to swap. 
-5. Initialise a collection to store swapped rows indices.
-6. For each *i* row in the data, popleft the deque to obtain a pointer row.
-7. If the rows iteration is complete, or the deque is empty, end the 'For' loop. Solution is obtained.
-8. Check whether the pointer row is in the collection of swapped indices. If no, continue to swap. Else skip this row, since it's already swapped.
-9. If the pointer row value is different from the row, swap the values. Else popleft and append the pointer to the end of the deque. (So that this pointer can be eventually used for another row.)
-10. Using Simulated Annealing, accept the swap if swap yields a greater total diversity, or based on the annealing probability, reject the swap.
-11. If a swap is rejected, reverse the swaps and pops and appends. I.e. revert data to before the swap.
-12. Else, transfer the row index and pointer index in this iteration to the collection of swapped row indices.
-13. Continue iterations of each row, until 'For' loop breaks at step 7.
-14. Repeat steps 1 to 13 over *k* instances. Pick the highest scoring instance as solution. Users can input the value for *k*. (Higher *k* value increases the likelihood of achieving global maximum. At the expense of time.)
+5. Initialise a set to store swapped rows indices. (Hash)
+6. For each *i* row in the data, popleft the deque to obtain a pointer's value.
+7. While there is no new swap:
+> 7a. If the rows iteration is complete, or the deque is empty, end the 'For' loop. Solution is obtained.
+> 
+> 7b. Else, check whether the pointer's value is in the collection of swapped indices.
+> 
+> 7c. If no, continue to swap. Else skip this row, since it's already swapped.
+> 
+> 7d. If the pointer's value is different from the *i* row, proceed. Else, skip to the next *i*th row. Move the pointer's value to the deque end (Prevent self-swapping and row-swapping within same group.)
+> 
+> 7e. Using Simulated Annealing, if swap yields a greater total diversity, accept swap. Break the 'while' loop.
+>
+> 7f. Or based on the *annealing probability*, pick the next element in the deque as the new pointer. Revert the swap. Move the old pointer's value to the deque end. (The deque end will eventually be cycled to the front.) Break the 'while' loop.
 
-In step 10, memoisation is used to minimise duplicate calculation of Aggregate Diversity Scores for groups that are not involved in the swapping. Memoisation is also employed in other areas of the programme to conserve memory and time (steps 6 to 12). 
+8. Continue iterations of each row, until 'for' loop ends.
+9. Repeat steps 1 to 8 over *M* instances. Pick the highest scoring instance as solution. 
 
-In step 10, Simulated Annealing is used to reduce the likelihood of ending up with a local minimum. This is crucial, since maximum-value approach is not a complete solution. Global maximum might not be achieved before the solution is complete. However, depending on the user's use case, a complete assignment is usually unnecessary. Unless the user works with a very large number of rows or features. In such scenarios, the user might be satisfied with tweaking the cooling rate for the Simulated Annealing, balancing the needs of time, completeness and maximisation.
+In steps 7e to 7f, Simulated Annealing is used to reduce the likelihood of ending up with a local maximum. This is crucial, since maximum-value approach is not a complete solution. Global maximum might not be achieved before the solution is complete. However, depending on the user's use case, a complete assignment is usually unnecessary. This is especially important, because exhaustive search is not trivial. For a cohort of 60 people, splitting into 10 groups means there are more than 75 billion solutions. In step 9, the search space is limited to *M* instances (or *M* solutions).  
 
-Steps 4 to 13 (excluding 10) is designed to reduce the problem and complexity size with every iteration. It is inspired by the MAC (Maintaining Arc Consistency) algorithm in CSP. While the overall algorithm is not CSP, the problem is reduced with each iteration.
+Steps 4 to 8 (excluding steps 7e and 7f) is designed to reduce the problem size with every iteration. It is inspired by the MAC (Maintaining Arc Consistency) algorithm in CSP. While the overall algorithm is not CSP, the problem size is reduced with each iteration. 
 
-Because the solution is not complete, there is a step 14. This is to further minimise the chance of getting stuck on a local maximum. 
+To further reduce the size of the problem, rate of the problem reduction is determined by  [*heuristics*](#heu).
+
+<a name="heu"></a>
+## Heuristics ##
+
+### Search Heuristic ###
+In Simulated Annealing, the reduction rate is determined by the cooling rate.
+
+In thermodynamics, the original formula used to describe annealing is:
+
+$$
+P = e^{-\frac{\Delta E}{k \ \cdot \ T}} \
+$$
+
+> where *P* is the probability that the energy will increase by delta E, *delta E* is change in energy (new energy - previous energy), *k* is the Boltzmann Constant (1.380649 × 10<sup>−23</sup> joule per kelvin), *T* is temperature. 
+
+For the programme, we modified the original thermodynamics equation and combined both geometric reduction and linear reduction rules. Reduction rules are important in simulated annealing, because they promote exploration early in the search, and exploitation later in the search. In exploration, the goal is to increase the likelihood of landing near global maximum, through a more agressive probability of accepting an alternative solution. After exploration comes exploitation, where the probabilty of accepting an alternative solution is weakened, converging the solution towards the maximum.
+
+In the programme, the probability of accepting a neigbour solution (*P*) was modified to be more aggressive at the start. The aggression is reduced as the problem size (number of elements unassigned into groups) reduces over the assignment iterations:
+
+$$
+P = e \ ^{\frac{\Delta E}{k \ \cdot \ cooling \ rate}} \
+$$
+
+Note that *delta E* was modififed to become a positive value. This agggressive modifier is controlled by the geometrical reduction rule *cooling rate*:
+
+$$
+cooling \ rate = T \cdot problem \ size
+$$
+
+> where *T* is temperature. 
+
+During development, a small sample study showed that geometrical reduction was vital in escaping local maximums. This is crucial in cases where clustering of similar features can happen due to over-dominance of features. For example, in assigning project groups among multi-discipline students, autocorrelation of features are common. E.g. a computing project may have more computer science students than informatics students.
+
+*problem size* is determined from the linear reduction rule:
+
+$$
+problem \ size = \frac{(total \ number \ of \ elements \ - \ number \ of \ elements \ assigned \ into \ groups)}{total \ number \ of \ elements}
+$$
+
+Thus, through the linear reduction, the annealing schedule is coupled to the iterative "MAC-like" problem reduction. The aim of this coupling is to avoid over-exploration and over-exploitation.
+
+### Search Space Capping ###
+Regardless of the search heuristic, the problem size (or search space) has to be further reduced. Splitting 60 people into 10 groups means there are more than 75 billion solutions. (<sub>n</sub>C<sub>r</sub> = '60 Choose 10')
+
+The programme caps the solutions to ***(<sub>n</sub>C<sub>2</sub>*** instances. The rationale is the algorithm does pair-wise swapping. Hence, the optimal solution should be within ***(<sub>n</sub>C<sub>2</sub>***. This ignores that sequence of possible swaps are randomly generated and non-exhaustive. It also ignores alternative solutions generated during annealing is probable. 
+
+Hence, the actual optimal solution might be _near_ ***(<sub>n</sub>C<sub>2</sub>*** number of instances generated. This was also seen in small sample experiments. However, the programme still uses ***(<sub>n</sub>C<sub>2</sub>*** as a relaxed heuristic that is computationally light and easy to scale to any *N* number of features. 
 
 ## Limitations ##
-- As a non-CSP approach, users cannot introduce CSPs, such as "Every group must have at least one person from R&D."
-> However, it is possible to adapt the code to increase the weight of certain columns. This is useful to increase representation of minority groups.
 
-- While current implementation maximises value, the solution is not complete. And this could mean we do not arrive at the global maximum. I.e. it's possible to get stuck on a local minimum.
-> Potentially, the "MAC-like" problem reduction could be swapped with a two-agent adversarial search, to obtain a complete solution. (I.e. we are sure the global maximum was achieved.)
+- As a non-CSP approach, users cannot introduce CSPs, such as "Every group must have at least one person from R&D."
+> However, it is possible to adapt the code to increase the weight of certain columns. This is useful for increasing the representation of minority groups.
+
+- While current implementation maximises value, the solution is not complete. And this could mean we do not arrive at the global maximum. I.e. it's possible to get stuck on a local maximum.
+> Potentially, the "MAC-like" problem reduction could be replaced with a two-agent adversarial search. This might create a complete solution, by pruning suboptimal solutions. (I.e. we are sure the global maximum was achieved.)
 
 - As the number of rows or features increases, processing time can increase significantly.
 > This could be addressed by tweaking the Simulated Annealing cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stuck at a local maximum.)
 
 ## Collaboration ##
+
 Code is open-source, GPL-3. Anyone is free to improve the programme or adapt the software in other / their projects, subject to GPL-3 licence. 
 
 Feel free to collab and contribute!
@@ -154,12 +211,15 @@ Feel free to collab and contribute!
 Corrections to documentation or code are greatly appreciated :)
 
 ## Future Work ##
+
+- Further experiment and improve heuristics. 
 - Installable executable to be available on GitHub.
-- Improve efficiency by minimising list generation through memoisation.
+- ~~Improve efficiency by minimising list generation through memoisation.~~ *Done*
 - Refactor code into OOP for easier maintenance.
 - Branch project into a less verbose UI and reduced options. While more options are great for technical users, these can be easily tweaked in the code. Non-technical users may find the programme more accessible if some options are invisible defaults.
 
 ## References ##
+
 <a name="SW"></a>Shannon, C. E., and Weaver, W., 1949. The Mathematical Theory of Communication. Urbana: University of Illinois Press.
 [*Article extract*](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
 
