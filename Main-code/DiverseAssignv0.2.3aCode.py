@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jan 1 07:53:12 2024
-Updated on Mon Jan 23 05:16:20 2024
-@author: Joseph
-"""
 import sys
 import os
 from pandas import read_csv, DataFrame
@@ -351,8 +345,8 @@ for i in range(instance_count):
     
     print("Progress on current solution 100%")
     print()
-    print(f"Solution Number {solution_number}'s initial diversity score was {initial_diversity}")
-    print(f"Solution Number {solution_number}'s final diversity score was {best_diversity}")    
+    print(f"Solution Number {solution_number:,}'s initial diversity score was {initial_diversity}")
+    print(f"Solution Number {solution_number:,}'s final diversity score was {best_diversity}")    
     
     if i == 0:
         stopwatch.stop()
@@ -380,7 +374,7 @@ data = best_solution
 # %% Solution found screen
 
 print()
-print(f"{instance_count} number of solutions completed. The best solution picked is Solution Number {picked_solution}. The best diversity score acheived was {best_diversity}")
+print(f"{instance_count} number of solutions completed. The best solution picked is Solution Number {picked_solution:,}. The best diversity score achieved was {best_diversity}")
 
 print()
 print("Group assignment is completed.")
