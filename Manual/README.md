@@ -22,9 +22,13 @@ See licence page at https://github.com/joseph-liew/Diverse-Assign?tab=GPL-3.0-1-
 
 # HOW TO USE THE PROGRAMME
 Steps:
+
 (1)	Save the CSV file to the same folder as this programme (“DiverseAssignv0.2.3a.exe”).
+
 (2)	Open “DiverseAssignv0.2.3a.exe”
+
 (3)	Follow the on-screen instructions.
+
 (4)	Done!
 
 The programme adds one column to the start (“left”) of the CSV file and one column to the end (“right”) of the CSV file. 
