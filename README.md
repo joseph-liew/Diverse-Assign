@@ -13,7 +13,7 @@ Links to:
 - [*UI-features. COMING SOON*](XXXXX)
 > Documentation of intuitive UI design features.
 
-- [*Compiling-notes. COMING SOON*](XXXXX)
+- [*Compiling-notes*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Compiling-notes)
 > Quick note before you compile.
 
 - [*Main-code.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Main-code) 
