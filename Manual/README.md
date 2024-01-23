@@ -1,16 +1,22 @@
 ==========================
 Diverse-Assign v.0.2.3a. 
 ==============January 2024
+```
 RRRRR   EEEEE   AAAAA  DDDD       M     M  EEEEE
 R    R  E      A     A D   D      MM   MM  E
 RRRRR   EEEE   AAAAAAA D    D     M M M M  EEEE
 R    R  E      A     A D   D      M  MM M  E
 R     R EEEEE  A     A DDDD       M     M  EEEEE
+```
 ==========================
-Licence: 
+  Licence: 
+
 Open Source. GPL-3. 
-See main GitHub page at sdgfhjfjk for more info. 
+
+See licence page at https://github.com/joseph-liew/Diverse-Assign?tab=GPL-3.0-1-ov-file for more info. 
+
 ==========================
+
 # HOW TO USE THE PROGRAMME
 Steps:
 (1)	Save the CSV file to the same folder as this programme (“DiverseAssignv0.2.3a.exe”).
@@ -44,4 +50,5 @@ Ans:
 -	Optimisation to achieve maximum diversity is being explored. If you know how to engineer programmes and you’d like contribute, please contact us via our GitHub page at: https://github.com/joseph-liew/Diverse-Assign
 
 For technical abstract paper, see main GitHub page at: https://github.com/joseph-liew/Diverse-Assign
+
 Sample input data was generated using "generatedata.com". Credits to the team at https://github.com/benkeen/generatedata for creating this magnificent mock data generator.
