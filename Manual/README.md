@@ -28,6 +28,10 @@ Steps:
 
 The programme adds one column to the start (“left”) of the CSV file and one column to the end (“right”) of the CSV file. 
 
+>> Note: See below screenshot of sample output. The programme adds two new columns to the data. One on the "left" (yellow-column) and one on the "right" (yellow-column).
+
+>> ![Screenshot of sample output. The programme adds two new columns to the "left" and "right" of the data.](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/added_columns.png?raw=true)
+
 The first column added has no name. It is the index. In other words, it records the sequence of rows before the group assignment. 
 
 (Note that the sequence starts from 0 and ascends down the row. For e.g. If there are 61 rows, ‘0’ is the first row. ‘60’ is the last row.) 
@@ -36,7 +40,9 @@ The last column is named “assigned_group”. This column indicates the assigne
 
 If you would like a demo, copy and paste the sample file “sample_input.csv” from the “samples” folder to the same folder as the programme. 
 
-The Aggregate Diversity Score should be close or similar to the “sample_output.csv” in the “samples” folder. The Aggregate Diversity Score of the sample output was 1.9946576237447953.
+The Aggregate Diversity Score should be close or similar to the “sample_output.csv” in the “samples” folder. The Aggregate Diversity Score of the sample output was: 
+
+> 1.9946576237447953
 
 FAQ: 
 ====
