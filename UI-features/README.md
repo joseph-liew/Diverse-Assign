@@ -20,7 +20,7 @@
 
 3) Group assignment can be long. Progress indicators and estimated time to completion are given to help user gauge to check progress and estimated run-time.
 
-> **Example: progress indicators and auto-calculated ETA to completion**
+> **Example: progress indicators and auto-calculated ETA to completion.**
 
 > ![Screenshot of progress indicators and estimated time to completion](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/validation.png?raw=true)
  
