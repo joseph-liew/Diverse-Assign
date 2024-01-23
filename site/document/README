@@ -1,0 +1,48 @@
+==========================
+Diverse-Assign v.0.2.3a. 
+==============January 2024
+RRRRR   EEEEE   AAAAA  DDDD       M     M  EEEEE
+R    R  E      A     A D   D      MM   MM  E
+RRRRR   EEEE   AAAAAAA D    D     M M M M  EEEE
+R    R  E      A     A D   D      M  MM M  E
+R     R EEEEE  A     A DDDD       M     M  EEEEE
+==========================
+Licence: 
+Open Source. GPL-3. 
+See licence page at https://github.com/joseph-liew/Diverse-Assign?tab=GPL-3.0-1-ov-file for more info. 
+==========================
+# HOW TO USE THE PROGRAMME
+Steps:
+(1)	Save the CSV file to the same folder as this programme (“DiverseAssignv0.2.3a.exe”).
+(2)	Open “DiverseAssignv0.2.3a.exe”
+(3)	Follow the on-screen instructions.
+(4)	Done!
+
+The programme adds one column to the start (“left”) of the CSV file and one column to the end (“right”) of the CSV file. 
+
+The first column added has no name. It is the index. In other words, it records the sequence of rows before the group assignment. 
+
+(Note that the sequence starts from 0 and ascends down the row. For e.g. If there are 61 rows, ‘0’ is the first row. ‘60’ is the last row.) 
+
+The last column is named “assigned_group”. This column indicates the assigned groups. The groups are numbered from 1 to the number of groups you wanted. E.g. If you wanted 10 groups, the rows are assigned ‘1’ to ‘10’.
+
+If you would like a demo, copy and paste the sample file “sample_input.csv” from the “samples” folder to the same folder as the programme. 
+
+The Aggregate Diversity Score should be close or similar to the “sample_output.csv” in the “samples” folder. The Aggregate Diversity Score of the sample output was 1.9946576237447953.
+
+FAQ: 
+====
+Why are the solutions slightly different each time I run the same input and number of groups?
+
+Ans:
+==== 
+-	Within a small range of similar diversity scores, there can be multiple solutions. 
+-	Analogically, think of a square hole and a circle peg. If the square hole is slightly larger the circle, circle peg can fit through the square hole. 
+-	Mathematically, it’s possible to have multiple solutions that share the same diversity. In a diverse problem, there are multiple combination of features and attributes that can combine to get the same diversity score.
+-	Currently, the programme can achieve a diversity close to the maximum diversity possible. However, we are unable to achieve maximum diversity without the computer crunching the programme for hours.
+-	Hence, the programme provides the best solution that is close to the optimum (or most diverse) score.
+-	Optimisation to achieve maximum diversity is being explored. If you know how to engineer programmes and you’d like contribute, please contact us via our GitHub page at: https://github.com/joseph-liew/Diverse-Assign
+
+For graphical manual and additional info, see page: https://github.com/joseph-liew/Diverse-Assign/Manual/README.md
+For technical abstract paper, see main GitHub page at: https://github.com/joseph-liew/Diverse-Assign
+Sample input data was generated using "generatedata.com". Credits to the team at https://github.com/benkeen/generatedata for creating this magnificent mock data generator.
