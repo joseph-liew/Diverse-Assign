@@ -306,13 +306,15 @@ while True:
         print(f"... there are {num_rows} participants in total.")
         
         if num_groups < 1:
-            raise ValueError("\n Wrong input. Number has to be an integer greater than 0. Please re-try.")
+            print("\n Wrong input. Number has to be an integer greater than 0.")
+            raise ValueError
         
         elif num_groups >= num_rows:
-            raise ValueError("\n Wrong input. The number of groups must be smaller than the number of participants. Please re-try.")
-            
+            print("\n Wrong input. The number of groups must be smaller than the number of participants.")
+            raise ValueError
+        
     except Exception as e:
-        print("\n Wrong input. Number has to be an integer greater than 0. Please re-try.")
+        print("\n Please re-try.")
         continue
 
     break
@@ -321,7 +323,11 @@ while True:
 
 exhaust_count = comb(num_rows, num_groups)
 instance_count = comb(num_rows, 2)
+if instance_count > exhaust_count:
+    instance_count = exhaust_count
 eliminated_count = exhaust_count - instance_count
+if eliminated_count < instance_count:
+    eliminated_count = 0
 
 # %% Initialise assignment
 
@@ -440,3 +446,4 @@ print(f"Output saved as: \n \'{output_filename}\'")
 
 # %% Goodbye screen
 print("\n You can close this programme now. \n Goodbye!")
+input("\n Press [ENTER] to exit...")
