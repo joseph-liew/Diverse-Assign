@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 from pandas import read_csv, DataFrame
 from numpy import tile, arange, exp
 from math import log, comb
@@ -274,13 +274,15 @@ while True:
         print(f"... there are {num_rows} participants in total.")
         
         if num_groups < 1:
-            raise ValueError("\n Wrong input. Number has to be an integer greater than 0. Please re-try.")
+            print("\n Wrong input. Number has to be an integer greater than 0.")
+            raise ValueError
         
         elif num_groups >= num_rows:
-            raise ValueError("\n Wrong input. The number of groups must be smaller than the number of participants. Please re-try.")
-            
+            print("\n Wrong input. The number of groups must be smaller than the number of participants.")
+            raise ValueError
+        
     except Exception as e:
-        print("\n Wrong input. Number has to be an integer greater than 0. Please re-try.")
+        print("\n Please re-try.")
         continue
 
     break
@@ -289,7 +291,11 @@ while True:
 
 exhaust_count = comb(num_rows, num_groups)
 instance_count = comb(num_rows, 2)
+if instance_count > exhaust_count:
+    instance_count = exhaust_count
 eliminated_count = exhaust_count - instance_count
+if eliminated_count < instance_count:
+    eliminated_count = 0
 
 # %% Initialise assignment
 
@@ -374,7 +380,7 @@ data = best_solution
 # %% Solution found screen
 
 print()
-print(f"{instance_count} number of solutions completed. The best solution picked is Solution Number {picked_solution:,}. The best diversity score achieved was {best_diversity}")
+print(f"{instance_count:,} number of solutions completed. The best solution picked is Solution Number {picked_solution:,}. The best diversity score achieved was {best_diversity}")
 
 print()
 print("Group assignment is completed.")
@@ -404,3 +410,4 @@ print(f"Output saved as: \n \'{output_filename}\'")
 
 # %% Goodbye screen
 print("\n You can close this programme now. \n Goodbye!")
+input("\n Press [ENTER] to exit...")
