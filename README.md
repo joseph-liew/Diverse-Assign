@@ -7,7 +7,7 @@ Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Divers
 ## Manual and Code ##
 
 Links to:
-- [*Manual. COMING SOON*](XXXXX) 
+- [*Manual.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Manual)
 > How-to-use guide.
 
 - [*UI-features. COMING SOON*](XXXXX)
