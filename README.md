@@ -7,6 +7,9 @@ Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Divers
 ## Manual and Code ##
 
 Links to:
+- [*Windows and Mac Releases.*](https://github.com/joseph-liew/Diverse-Assign/releases)
+> For non-technical users. Click the above link to download a Windows or Mac executable. Coding and installatin not required.
+
 - [*Manual.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Manual)
 > How-to-use guide.
 
@@ -44,7 +47,7 @@ Links to:
 - Assigning experiments in A/B experiments to different customer segments.
 - Assigning compounds in combinatorial chemistry and pharmaceutical interaction experiments.
 - Homogenous admixture of multiple dependent variables for multi-factor experiments.
-- Other uses: Programme is ordinal/nominal value agnostic. It can be easily used to assign anything into diverse groups. 
+- Other uses: The programme is ordinal/nominal value agnostic. It can be easily used to assign anything into diverse groups. 
 
 ### Inspiration ###
 **Diverse-Assign** was inspired by a frequent challenge in education. When designing workshops/classrooms, educators/teachers often assign participants/students into groups by hand. This is tedious, especially if the participant/student profile has many features.
@@ -67,7 +70,7 @@ This is mentally tedious. Furthermore, when we try to use CSP optimisation imple
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
 - Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies. (See [*Use Cases*](#use).)    
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
-- Efficiency and optimisation might also be better than CSP approach (Needs study to ascertain.) 
+- Efficiency and optimisation might also be better than CSP approach eeds study to ascertain.) 
 
 Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation algorithm, the programme is relatively easy to scale fine-tune to any *N* number of features.
 
@@ -156,11 +159,11 @@ $$
 P = e^{-\frac{\Delta E}{k \ \cdot \ T}} \
 $$
 
-> where *P* is the probability that the energy will increase by delta E, *delta E* is change in energy (new energy - previous energy), *k* is the Boltzmann Constant (1.380649 × 10<sup>−23</sup> joule per kelvin), *T* is temperature. 
+> where *P* is the probability that the energy will increase by delta E, *delta E* is change in energy ew energy - previous energy), *k* is the Boltzmann Constant (1.380649 × 10<sup>−23</sup> joule per kelvin), *T* is temperature. 
 
 For the programme, we modified the original thermodynamics equation and combined both geometric reduction and linear reduction rules. Reduction rules are important in simulated annealing, because they promote exploration early in the search, and exploitation later in the search. In exploration, the goal is to increase the likelihood of landing near global maximum, through a more agressive probability of accepting an alternative solution. After exploration comes exploitation, where the probabilty of accepting an alternative solution is weakened, converging the solution towards the maximum.
 
-In the programme, the probability of accepting a neigbour solution (*P*) was modified to be more aggressive at the start. The aggression is reduced as the problem size (number of elements unassigned into groups) reduces over the assignment iterations:
+In the programme, the probability of accepting a neigbour solution (*P*) was modified to be more aggressive at the start. The aggression is reduced as the problem size umber of elements unassigned into groups) reduces over the assignment iterations:
 
 $$
 P = e \ ^{\frac{\Delta E}{k \ \cdot \ cooling \ rate}} \
@@ -187,9 +190,9 @@ Thus, through the linear reduction, the annealing schedule is coupled to the ite
 ### Search Space Capping ###
 Regardless of the search heuristic, the problem size (or search space) has to be further reduced. Splitting 60 people into 10 groups means there are more than 75 billion solutions. (<sub>n</sub>C<sub>r</sub> = '60 Choose 10')
 
-The programme caps the solutions to ***(<sub>n</sub>C<sub>2</sub>*** instances. The rationale is the algorithm does pair-wise swapping. Hence, the optimal solution should be within ***(<sub>n</sub>C<sub>2</sub>***. This ignores that sequence of possible swaps are randomly generated and non-exhaustive. It also ignores alternative solutions generated during annealing is probable. 
+The programme caps the solutions to ***<sub>n</sub>C<sub>2</sub>*** instances. The rationale is the algorithm does pair-wise swapping. Hence, the optimal solution should be within ***(<sub>n</sub>C<sub>2</sub>***. This ignores that sequence of possible swaps are randomly generated and non-exhaustive. It also ignores alternative solutions generated during annealing is probable. 
 
-Hence, the actual optimal solution might be _near_ ***(<sub>n</sub>C<sub>2</sub>*** number of instances generated. This was also seen in small sample experiments. However, the programme still uses ***(<sub>n</sub>C<sub>2</sub>*** as a relaxed heuristic. Depending on the use case, the difference between the best solution picked by the programme and the most diverse assignments could be acceptable to users. Computing a more accurate heuristic has diminishing returns. Currently, ***(<sub>n</sub>C<sub>2</sub>*** is preferred. given it is computationally light, and easy to scale to any *N* number of features. 
+Hence, the actual optimal solution might be _near_ ***<sub>n</sub>C<sub>2</sub>*** number of instances generated. This was also seen in small sample experiments. However, the programme still uses ***(<sub>n</sub>C<sub>2</sub>*** as a relaxed heuristic. Depending on the use case, the difference between the best solution picked by the programme and the most diverse assignments could be acceptable to users. Computing a more accurate heuristic has diminishing returns. Currently, ***(<sub>n</sub>C<sub>2</sub>*** is preferred. given it is computationally light, and easy to scale to any *N* number of features. 
 
 ## Limitations ##
 
