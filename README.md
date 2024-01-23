@@ -10,10 +10,10 @@ Links to:
 - [*Manual.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Manual)
 > How-to-use guide.
 
-- [*UI-features. COMING SOON*](XXXXX)
+- [*UI-features.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/UI-features)
 > Documentation of intuitive UI design features.
 
-- [*Compiling-notes*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Compiling-notes)
+- [*Compiling-notes.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Compiling-notes)
 > Quick note before you compile.
 
 - [*Main-code.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Main-code) 
