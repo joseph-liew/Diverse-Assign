@@ -1,6 +1,8 @@
-==========================
-Diverse-Assign v.0.2.3a. 
-==============January 2024
+**=======================**
+
+**Diverse-Assign v.0.2.3a.** 
+
+**============== January 2024**
 ```
 RRRRR   EEEEE   AAAAA  DDDD       M     M  EEEEE
 R    R  E      A     A D   D      MM   MM  E
@@ -38,6 +40,7 @@ The Aggregate Diversity Score should be close or similar to the “sample_output
 
 FAQ: 
 ====
+
 Why are the solutions slightly different each time I run the same input and number of groups?
 
 Ans:
