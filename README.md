@@ -66,7 +66,7 @@ This is mentally tedious. Furthermore, when we try to use CSP optimisation imple
 **Diverse-Assign** is different from the conventional AI approach used in group assignment. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
 - Unlike traditional approach, the problem is simplified into maximum value problem. 
-- Our approach: Simulated Annealing, driven by a production reduction and heuristics inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) and [*Heuristics*](#heu) for more info.)
+- Our approach: Simulated Annealing, driven by a production reduction and heuristics inspired by AC-3 algorithm in CSP. (See [*Algorithm*](#algo) and [*Heuristics*](#heu) for more info.)
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
 - Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies. (See [*Use Cases*](#use).)    
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
@@ -143,7 +143,7 @@ The Aggregate Diversity Score serves as a convenient value measure to assign gro
 
 In steps 7e to 7f, Simulated Annealing is used to reduce the likelihood of ending up with a local maximum. This is crucial, since maximum-value approach is not a complete solution. Global maximum might not be achieved before the solution is complete. However, depending on the user's use case, a complete assignment is usually unnecessary. This is especially important, because exhaustive search is not trivial. For a cohort of 60 people, splitting into 10 groups means there are more than 75 billion solutions. In step 9, the search space is limited to *M* instances (or *M* solutions).  
 
-Steps 4 to 8 (excluding steps 7e and 7f) is designed to reduce the problem size with every iteration. It is inspired by the MAC (Maintaining Arc Consistency) algorithm in CSP. While the overall algorithm is not CSP, the problem size is reduced with each iteration. 
+Steps 4 to 8 (excluding steps 7e and 7f) is designed to reduce the problem size with every iteration. It is inspired by the AC-3 algorithm in CSP. While the overall algorithm is not CSP, the problem size is reduced with each iteration. 
 
 To further reduce the size of the problem, rate of the problem reduction is determined by [*heuristics*](#heu).
 
@@ -185,7 +185,7 @@ $$
 problem \ size = \frac{(total \ number \ of \ elements \ - \ number \ of \ elements \ assigned \ into \ groups)}{total \ number \ of \ elements}
 $$
 
-Thus, through the linear reduction, the annealing schedule is coupled to the iterative "MAC-like" problem reduction. The aim of this coupling is to avoid over-exploration and over-exploitation.
+Thus, through the linear reduction, the annealing schedule is coupled to the iterative "AC-3-like" problem reduction. The aim of this coupling is to avoid over-exploration and over-exploitation.
 
 ### Search Space Capping ###
 Regardless of the search heuristic, the problem size (or search space) has to be further reduced. Splitting 60 people into 10 groups means there are more than 75 billion solutions. (<sub>n</sub>C<sub>r</sub> = '60 Choose 10')
@@ -200,7 +200,7 @@ Hence, the actual optimal solution might be _near_ ***<sub>n</sub>C<sub>2</sub>*
 > However, it is possible to adapt the code to increase the weight of certain columns. This is useful for increasing the representation of minority groups.
 
 - While current implementation maximises value, the solution is not complete. And this could mean we do not arrive at the global maximum. I.e. it's possible to get stuck on a local maximum.
-> Potentially, the "MAC-like" problem reduction could be replaced with a two-agent adversarial search. This might create a complete solution, by pruning suboptimal solutions. (I.e. we are sure the global maximum was achieved.)
+> Potentially, the "AC-3-like" problem reduction could be replaced with a two-agent adversarial search. This might create a complete solution, by pruning suboptimal solutions. (I.e. we are sure the global maximum was achieved.)
 
 - As the number of rows or features increases, processing time can increase significantly.
 > This could be addressed by tweaking the Simulated Annealing cooling rate and the number of instances to create. (At the cost of increased likelihood of getting stuck at a local maximum.)
