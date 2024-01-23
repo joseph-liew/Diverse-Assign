@@ -41,7 +41,7 @@ Ans:
 -	Mathematically, it’s possible to have multiple solutions that share the same diversity. In a diverse problem, there are multiple combination of features and attributes that can combine to get the same diversity score.
 -	Currently, the programme can achieve a diversity close to the maximum diversity possible. However, we are unable to achieve maximum diversity without the computer crunching the programme for hours.
 -	Hence, the programme provides the best solution that is close to the optimum (or most diverse) score.
--	Optimisation to achieve maximum diversity is being explored. If you know how to engineer programmes and you’d like contribute, please contact us via our GitHub page at: https://github.com/joseph-liew/Diverse-Assign
+-	Optimisation to achieve maximum diversity is being explored. If you know how to engineer programmes and you’d like contribute, please contact us via our GitHub page at: [https://github.com/joseph-liew/Diverse-Assign]
 
-For technical abstract paper, see main GitHub page at: [https://github.com/joseph-liew/Diverse-Assign](https://github.com/joseph-liew/Diverse-Assign)
-Sample input data was generated using "generatedata.com". Credits to the team at [https://github.com/benkeen/generatedata](https://github.com/benkeen/generatedata) for creating this magnificent mock data generator.
+For technical abstract paper, see main GitHub page at: [https://github.com/joseph-liew/Diverse-Assign]
+Sample input data was generated using "generatedata.com". Credits to the team at [https://github.com/benkeen/generatedata] for creating this magnificent mock data generator.
