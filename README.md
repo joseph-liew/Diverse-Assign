@@ -63,7 +63,7 @@ This is mentally tedious. Furthermore, when we try to use CSP optimisation imple
 **Diverse-Assign** is different from the conventional AI approach used in group assignment. This yields several advantages.
 - Traditional approach uses Constraint-Satisfaction-Problem (CSP) algorithms.
 - Unlike traditional approach, the problem is simplified into maximum value problem. 
-- Our approach: Simulated Annealing, driven by a production reduction and heuristics inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) and [*Heuristics*](#heu)for more info.)
+- Our approach: Simulated Annealing, driven by a production reduction and heuristics inspired by MAC (Maintaining Arc Consistency) algorithm in CSP. (See [*Algorithm*](#algo) and [*Heuristics*](#heu) for more info.)
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
 - Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies. (See [*Use Cases*](#use).)    
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
@@ -142,7 +142,7 @@ In steps 7e to 7f, Simulated Annealing is used to reduce the likelihood of endin
 
 Steps 4 to 8 (excluding steps 7e and 7f) is designed to reduce the problem size with every iteration. It is inspired by the MAC (Maintaining Arc Consistency) algorithm in CSP. While the overall algorithm is not CSP, the problem size is reduced with each iteration. 
 
-To further reduce the size of the problem, rate of the problem reduction is determined by  [*heuristics*](#heu).
+To further reduce the size of the problem, rate of the problem reduction is determined by [*heuristics*](#heu).
 
 <a name="heu"></a>
 ## Heuristics ##
