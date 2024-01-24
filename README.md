@@ -33,10 +33,10 @@ Links to:
 
 ### Ready to Use. Ready to Compile. Intuitive UI ### 
 - Self-guided, text-driven UI. Easily used in any IDE, notebook or command line.
-- Accessible features include input: validity checks, assignment progress indicator, estimated assignment completion time.
+- Accessible features include: input validity checks, assignment progress indicator, estimated assignment completion time.
 - Programme can be immediately compiled into an executable, as is. This can make the software accessible with no-code experience.
 - Our aim is anyone who know what is a CSV file to use the software intuitively. 
-- *Forthcoming:* Installable executable to be available on GitHub.
+- Compiled app available for download. No installation required.
 
 <a name="use"></a> 
 ### Use Cases ### 
@@ -54,10 +54,14 @@ Links to:
 Objectivity is another concern. For e.g.:
 - If we can't have equal representation of genders and education levels in each group, which group should have equal gender representation? 
 - Which should have equal education level representation? 
-- Or should we unbalanced admixture of gender education?
+- Or should we have unbalanced admixture of gender and education?
 - If so, how much?
 
-This is mentally tedious. Furthermore, when we try to use CSP optimisation implementation, this is very challenging to implement and optimise. How should we write a CSP algorithm to cover *N* number of profile features? 
+When assigning by hand, such considerations are very subjective. 
+
+Doing by hand is also mentally tedious. 
+
+Furthermore, if done by computer, commonly used CSP algorithms is very difficult. For such problems CSP optimisation is very challenging to implement and optimise. How should we write a CSP algorithm to cover any *N* number of profile features? 
 
 
 ## Software Engineering Features ## 
@@ -69,9 +73,9 @@ This is mentally tedious. Furthermore, when we try to use CSP optimisation imple
 - Ordinal/Nominal agnostic: Avoiding CSP, we avoid challenge of dealing with mixtures of ordinal/nominal data types.
 - Other use cases: Ordinal/Nominal value agnostic means the programme can be easily used to assign anything into diverse groups. For example, grouping agents in combinatorial interaction studies. (See [*Use Cases*](#use).)    
 - Simpler implementation makes it easy to adapt the software to support intuitive UI designs.
-- Efficiency and optimisation might also be better than CSP approach eeds study to ascertain.) 
+- Efficiency and optimisation might also be better than CSP approach (needs further study to ascertain.) 
 
-Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation algorithm, the programme is relatively easy to scale fine-tune to any *N* number of features.
+Also, the simple implementation makes the code amenable to introducing weighted-values. Weighted-values can be used to improve representation of minority groups. Unlike CSP optimisation, applying weights is relatively easy to scale and fine-tune to any *N* number of features.
 
 ## Objective Solution ##
 
@@ -144,7 +148,7 @@ In steps 7e to 7f, Simulated Annealing is used to reduce the likelihood of endin
 
 Steps 4 to 8 (excluding steps 7e and 7f) is designed to reduce the problem size with every iteration. It is inspired by the AC-3 algorithm in CSP. While the overall algorithm is not CSP, the problem size is reduced with each iteration. 
 
-To further reduce the size of the problem, rate of the problem reduction is determined by [*heuristics*](#heu).
+To further reduce the size of the problem, the rate of the problem reduction is determined by [*heuristics*](#heu).
 
 <a name="heu"></a>
 ## Heuristics ##
@@ -162,7 +166,7 @@ $$
 
 For the programme, we modified the original thermodynamics equation and combined both geometric reduction and linear reduction rules. Reduction rules are important in simulated annealing, because they promote exploration early in the search, and exploitation later in the search. In exploration, the goal is to increase the likelihood of landing near global maximum, through a more agressive probability of accepting an alternative solution. After exploration comes exploitation, where the probabilty of accepting an alternative solution is weakened, converging the solution towards the maximum.
 
-In the programme, the probability of accepting a neigbour solution (*P*) was modified to be more aggressive at the start. The aggression is reduced as the problem size umber of elements unassigned into groups) reduces over the assignment iterations:
+In the programme, the probability of accepting a neigbour solution (*P*) was modified to be more aggressive at the start. The aggression is reduced as the problem size (number of elements unassigned into groups) reduces over the assignment iterations:
 
 $$
 P = e \ ^{\frac{\Delta E}{k \ \cdot \ cooling \ rate}} \
@@ -219,7 +223,7 @@ Corrections to documentation or code are greatly appreciated :)
 ## Future Work ##
 
 - Further experiment and improve heuristics. 
-- Installable executable to be available on GitHub.
+- ~~Installable executable to be available on Github~~. *Done*
 - ~~Improve efficiency by minimising list generation through memoisation.~~ *Done*
 - Refactor code into OOP for easier maintenance.
 - Branch project into a less verbose UI and reduced options. While more options are great for technical users, these can be easily tweaked in the code. Non-technical users may find the programme more accessible if some options are invisible defaults.
