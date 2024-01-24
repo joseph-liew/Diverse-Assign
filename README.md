@@ -57,7 +57,7 @@ Objectivity is another concern. For e.g.:
 - Or should we unbalanced admixture of gender education?
 - If so, how much?
 
-This is mentally tedious. Furthermore, when we try to use CSP optimisation implementation, this is very challenging to implement and optimise. How should we write a CSP algorithm to cover *N* number of profile features.
+This is mentally tedious. Furthermore, when we try to use CSP optimisation implementation, this is very challenging to implement and optimise. How should we write a CSP algorithm to cover *N* number of profile features? 
 
 
 ## Software Engineering Features ## 
