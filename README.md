@@ -4,8 +4,7 @@ Version 0.2.3a. January 2024
 
 Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Diverse-Assign/blob/main/LICENSE)
 
-## Manual and Code ##
-
+## Main Page
 Links to:
 - [*Windows and Mac Releases.*](https://github.com/joseph-liew/Diverse-Assign/releases)
 > For non-technical users. Click the above link to download a Windows or Mac executable. Coding and installatin not required.
