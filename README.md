@@ -158,7 +158,7 @@ $$
 P = e^{-\frac{\Delta E}{k \ \cdot \ T}} \
 $$
 
-> where *P* is the probability that the energy will increase by delta E, *delta E* is change in energy ew energy - previous energy), *k* is the Boltzmann Constant (1.380649 × 10<sup>−23</sup> joule per kelvin), *T* is temperature. 
+> where *P* is the probability that the energy will increase by delta E, *delta E* is change in energy (new energy - previous energy), *k* is the Boltzmann Constant (1.380649 × 10<sup>−23</sup> joule per kelvin), *T* is temperature. 
 
 For the programme, we modified the original thermodynamics equation and combined both geometric reduction and linear reduction rules. Reduction rules are important in simulated annealing, because they promote exploration early in the search, and exploitation later in the search. In exploration, the goal is to increase the likelihood of landing near global maximum, through a more agressive probability of accepting an alternative solution. After exploration comes exploitation, where the probabilty of accepting an alternative solution is weakened, converging the solution towards the maximum.
 
@@ -167,6 +167,8 @@ In the programme, the probability of accepting a neigbour solution (*P*) was mod
 $$
 P = e \ ^{\frac{\Delta E}{k \ \cdot \ cooling \ rate}} \
 $$
+
+> where *E* is the *Aggregate Diversity Score*
 
 Note that *delta E* was modififed to become a positive value. This agggressive modifier is controlled by the geometrical reduction rule *cooling rate*:
 
