@@ -91,7 +91,7 @@ Diversity of group assignments was measured using information entropy, using the
 
 "Baseline initial diversity" was defined as diversity score of assigning groups through stratification. Because the stratification method is constant for all algorithms, baseline initial diversity is constant across all algorithms using the same data topology.
 
-Local maximums for each sample were identified from the diversity score. A local maximum was defined by criteria:
+Local maximums for each sample were identified from the diversity score. A local maximum was defined by these criteria:
 1)	Diversity score is the highest within a sequence of iteration instances. (A sequence is defined as beginning from the first iteration instance or from any pseudorandom restart point.) 
 2)	Diversity score must be higher than the baseline initial diversity.
 3)	Diversity score must be equal or higher to previous local maximum.
