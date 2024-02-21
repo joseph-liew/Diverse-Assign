@@ -41,7 +41,7 @@ Two datasets were created to simulate two different population sizes; one twice 
 
 Each dataset had two columns of unique features and four columns of constant features. Unique features are features that had the same number of unique categories as number of participant (or dataset rows). Constant features are features with the same proportion of categories in both datasets. The number combinations of unique row combinations were doubled respectively in the two populations (1× population = 3,904; 2× population = 7,808). [(See Tables A and B)](#TABLES_AB) 
 
-Datasets used in this study can be [downloaded from here](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/spreadsheets/pilot_study/sample_data)
+Datasets used in this study can be [downloaded from here](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/spreadsheets/pilot_study/sample_data).
 
 <a name="TABLES_AB"></a>**Table A: Feature profile of 1× population dataset**
 ![Table A: Feature profile of 1× population dataset](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/pilot_study/pilot_v030_tableA.PNG)
@@ -91,7 +91,7 @@ Diversity of group assignments was measured using information entropy, using the
 
 "Baseline initial diversity" was defined as diversity score of assigning groups through stratification. Because the stratification method is constant for all algorithms, baseline initial diversity is constant across all algorithms using the same data topology.
 
-Local maximums for each sample were identified from the diversity score. A local maximum was defined by these criteria:
+Local maximums for each sample were identified from the diversity score. A local maximum was defined by criteria:
 1)	Diversity score is the highest within a sequence of iteration instances. (A sequence is defined as beginning from the first iteration instance or from any pseudorandom restart point.) 
 2)	Diversity score must be higher than the baseline initial diversity.
 3)	Diversity score must be equal or higher to previous local maximum.
@@ -156,14 +156,16 @@ To further analyse the performance of test algorithms, the best performing varia
 ![Table I: Top algorithm variants selected for further study](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/pilot_study/pilot_v030_tableI.PNG)
 
 ### Visualisation of delta maxima over time. 
-[Figure 1](#FIG_1) visualises the mean diversity gain for each of the shortlisted algorithms, and also the two controls. Test variants achieved maximum convergence, across all samples. Only test variants showed maximum convergence. In test variants (blue, orange and green marker points), mean delta maxima increases rapidly initially, plateauing off at the maximum convergence with time. (Time = iteration instance). Generally, RandomRestart showed the fastest rate of diversity gain, followed by TwoHill and then SimAnneal.
+[Figure 1](#FIG_1) visualises the mean diversity gain for each of the shortlisted algorithms, and for each control. Test variants achieved maximum convergence, across all samples. The tight spread of data points suggests tests variants had low variance and highly reproducible delta maxima.
+
+Only test variants showed maximum convergence. In test variants (blue, orange and green data points), mean delta maxima increase rapidly in the initial phase. The mean delta maxima then plateau-off at the maximum convergence with time. (Time = iteration instance). Generally, RandomRestart showed the fastest rate of diversity gain, followed by TwoHill and then SimAnneal.
 
 <a name="#FIG_1"></a>**Figure 1: Top algorithm variants: Mean delta maxima achieved over time**. *((n) = 30)* 
 ![Figure 1: Top algorithm variants: Mean delta maxima achieved over time](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/pilot_study/pilot_v030_fig1.PNG)
 
 The graphs of the test controls also show that all three test algorithms could navigate through early diversity plateaus in the search. Note that the trend of diversity gain is tight with little variance. Despite having at least half of the delta maximum maxima occurring after the first plateau, [(reported in Table F)](#TABLES_F) test variants could achieve higher delta maxima, without creating a break in the trend of diversity gain. 
 
-The results also suggested that another type of hill-climbing algorithm, stochastic hill-climbing, would not converge if it was tested. Note that pseudorandom control’s result [(Figure 1, purple marker points)](#FIG_1) closely approximate stochastic hill-climbing.  This is because of the study criterion where diversity score is only a maxima if the score is equal or higher than the previous maxima. 
+The results also suggested that another type of hill-climbing algorithm, stochastic hill-climbing, would not converge if it was tested. Note that pseudorandom control’s result [(Figure 1, purple data points)](#FIG_1) closely approximate stochastic hill-climbing.  This is because of the study criterion where diversity score is only a maxima if the score is equal or higher than the previous maxima. 
 
 For pseudorandom control, the large spread of data points in Figure 1 also demonstrate that there was large variance in diversity among the algorithm sample. This is further supported by the SEM reported in [Table E](#TABLES_E). The SEM of pseudorandom controls ranged between 0.20× to 3.8× of the mean maximum maxima.
 
@@ -188,7 +190,7 @@ Two-sided post-hoc analyses were conducted between TwoHill plateau-capped to eac
 
 Between TwoHill plateau-capped and controls, statistical inference was that the distributions were significantly different. This was due to the distinct difference in the non-parametric TwoHill plateau-capped and parametric control distributions. [Table K](#TABLES_K) However, we can extra-statistically infer that the median of TwoHill plateau-capped was practically higher than the control medians. 
 
-In all data topologies, TwoHill plateau-capped’s entire distribution was high above both controls’ distributions. [Figure 3](#FIG_3) Furthermore, depending on data topology, TwoHill plateau-capped’s median was 3.1x to 15,900x higher than pseudorandom control [(Table K)](#TABLES_K). The largest difference in median was seen in the largest data topology *2x group count, 2x population size*. In this data topology, TwoHill plateau-capped had a smaller SEM to mean ratio, less than 0.5% of pseudorandom’s SEM to mean ratio. [(Table E)](#TABLES_E)
+In all data topologies, TwoHill plateau-capped’s entire distribution was high above both controls’ distributions. [Figure 3](#FIG_3) Furthermore, depending on data topology, TwoHill plateau-capped’s median was 3.1x to 15,900x higher than pseudorandom control [(Table K)](#TABLES_K). The largest difference in median was seen in the largest data topology *2x group count, 2x population size*. In this data topology, TwoHill plateau-capped had a smaller SEM to mean ratio, less than 0.5% of pseudorandom’s SEM to mean ratio. [(Table E)](#TABLES_E) The largest SEM to mean ratio for TwoHill plateau-capped was 0.01. Variance was almost negligible. This finding is coheres to the low data point spread seen in mean diversity gain plotted in [Figure 1](#FIG_1). 
 
 Lastly, the results also demonstrate the poor performance of pseudorandom methods in maximising diversity. ([Table E](#TABLES_E) and [Figure 3](#FIG_3)) In data topology *2x group count, 2x population size*, delta diversity decreased beyond 0. The 25<sup>th</sup> percentile delta diversity was at -0.31.
 
@@ -196,7 +198,7 @@ Lastly, the results also demonstrate the poor performance of pseudorandom method
 ![Figure 3: Top algorithm variants: violin plot comparisons](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/pilot_study/pilot_v030_fig3.PNG)
 
 ## Discussion
-The results indicated that *Diverse-Assign* v.0.30 greatly outperformed pseudorandom shuffling in all tested data topologies. Depending data topology, could achieve a higher maximum delta diversity by 15,900x. Also, results indicate that *Diverse-Assign's* assignments were  reproducible. *Diverse-Assign* can converge on the maximum delta diversity with high reproducibility and negligible SEM. Last but not least, *Diverse-Assign* avoided the formation of groups with homogenous features, a key flaw of pseudorandom and sequential assignment methods.
+The results indicated that *Diverse-Assign* v.0.30 greatly outperformed pseudorandom shuffling in all tested data topologies. Depending on data topology, could achieve a higher maximum delta diversity by 15,900x. Also, *Diverse-Assign's* assignments were reproducible. *Diverse-Assign* converged on the maximum delta diversity with high reproducibility and negligible SEM. Last but not least, *Diverse-Assign* avoided the formation of groups with homogenous features, a key flaw of pseudorandom and sequential assignment methods.
 
 *Diverse-Assign's* combination of several components was designed to support a broad range of data topologies. This is to avoid limiting its application by over-specialisation to a narrow range. The results also showed that the number of algorithms included were not extraneous. In half of the post-hoc tests, *Diverse-Assign* performed the same or better than just using one of the component algorithm. The plateau detection heuristic also enabled to *Diverse-Assign* to navigate beyond sub-optimal plateaus. 
 
@@ -206,7 +208,7 @@ The findings indicated that in some data topologies, using random restart hill-c
 
 The limitation of this study was the range of data topology tested. While a range of topology was tested, testing over wider range of data topologies might yield more findings. Another limitation was we could not confirm that the maximum delta diversity was the global maximum. Future tests can explore the use of smaller data topologies with known global maximums. Together with mathematical modelling, results could be extrapolated to a wide range of topologies. With additional testing, more areas for improvement can be identified.
 
-An area for improvement is *Diverse-Assign’s* heuristic to switch to different optimisation algorithms. We have seen in the findings that different algorithms perform better in certain topologies. Enhancing this heuristic to match the heuristic to topology will greatly shorten the processing time. 
+An area for improvement is *Diverse-Assign’s* heuristic to switch to different optimisation algorithms. Our findings show that different algorithms perform better in certain topologies. Enhancing this heuristic to match the heuristic to topology will greatly shorten the processing time. 
 
 In *Diverse-Assign*v.0.3.0, there is another heuristic determines that was not tested. This heuristic will determine whether to relax the constraint that all groups must not have homogenous features. It activates upon detection very skewed datasets, where an attribute is overly dominant in the population. Attribute over-dominance render the strict constraint impossible. Testing this heuristic and induction through mathematical modelling might discover more areas for enhancement.
 
