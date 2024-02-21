@@ -210,7 +210,7 @@ The limitation of this study was the range of data topology tested. While a rang
 
 An area for improvement is *Diverse-Assign’s* heuristic to switch to different optimisation algorithms. Our findings show that different algorithms perform better in certain topologies. Enhancing this heuristic to match the heuristic to topology will greatly shorten the processing time. 
 
-In *Diverse-Assign*v.0.3.0, there is another heuristic determines that was not tested. This heuristic will determine whether to relax the constraint that all groups must not have homogenous features. It activates upon detection very skewed datasets, where an attribute is overly dominant in the population. Attribute over-dominance render the strict constraint impossible. Testing this heuristic and induction through mathematical modelling might discover more areas for enhancement.
+In *Diverse-Assign*v.0.3.0, there is a heuristic not tested in this study. This heuristic determines whether to relax the constraint that all groups must not have homogenous features. It activates upon detection very skewed datasets, where an attribute is overly dominant in the population. Attribute over-dominance render the strict constraint impossible. Testing this heuristic and induction through mathematical modelling might discover more areas for enhancement.
 
 ## Conclusion
 Data show that *Diverse-Assign* definitively outperforms pseudorandom assignment in maximising diversity, while avoiding homogenous features. *Diverse-Assign’s* results were also reproducible, with little variance. To support enhancements, additional testing and study are recommended.
