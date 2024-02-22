@@ -1,7 +1,7 @@
 # Enhancing Diversity Optimisation: A Pilot Study Investigating the Performance of *Diverse-Assign* in Group Assignments
 
 ## Abstract
-Maximising diversity in group assignments poses challenge due to the varying features and attributes of the group elements. *Diverse-Assign* aims to surpass pseudorandom shuffling in diversity optimisation while addressing its limitations. We assess its effectiveness and the utility of *Diverse-Assign’s* algorithms and heuristic. Findings indicate *Diverse-Assign* definitively outperforms pseudorandom assignment, while mitigating homogeneity issues. Results were consistent and reproducible, suggesting its robustness. Further study and testing are recommended for enhancements. *Diverse-Assign* design and heuristics show promise in navigating suboptimal plateaus, enhancing diversity optimisation.
+Maximising diversity in group assignments poses challenge due to the varying features and attributes of the group elements. *Diverse-Assign* aims to surpass pseudorandom shuffling in diversity optimisation while addressing its limitations. We assess its effectiveness and the utility of *Diverse-Assign’s* algorithms and heuristic. Findings indicate *Diverse-Assign* definitively outperforms pseudorandom assignment, while mitigating homogeneity issues. *Diverse-Assign* outperformed pseudorandom shuffling in diversity by as much as 15,900x (median) and SEM to mean ratio of 0.01. Variance was almost negligible. Results were consistent and reproducible, suggesting its robustness. Further study and testing are recommended for enhancements. *Diverse-Assign* design and heuristics show promise in navigating suboptimal plateaus, enhancing diversity optimisation.
 
 ## Aim:
 Using different data topologies, determine whether:
