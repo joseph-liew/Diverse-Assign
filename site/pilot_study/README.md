@@ -206,7 +206,7 @@ The findings indicated that in some data topologies, using random restart hill-c
 
 ### Limitations and future improvements 
 
-The limitation of this study was the range of data topology tested. While a range of topology was tested, testing over wider range of data topologies might yield more findings. Another limitation was we could not confirm that the maximum delta diversity was the global maximum. Future tests can explore the use of smaller data topologies with known global maximums. Together with mathematical modelling, results could be extrapolated to a wide range of topologies. With additional testing, more areas for improvement can be identified.
+The limitation of this study was the range of data topology tested. While a range of topology was tested, testing over wider range of data topologies might yield more findings. Another limitation was we could not confirm that the maximum delta diversity covers the global maximum.  Future tests can explore the use of smaller data topologies with known global maximums. Together with mathematical modelling, results could be extrapolated to a wide range of topologies. With additional testing, more areas for improvement can be identified.
 
 An area for improvement is *Diverse-Assign’s* heuristic to switch to different optimisation algorithms. Our findings show that different algorithms perform better in certain topologies. Enhancing this heuristic to match the heuristic to topology will greatly shorten the processing time. 
 
