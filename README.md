@@ -16,7 +16,7 @@ Links:
   - [*UI deatures.*](https://github.com/joseph-liew/Diverse-Assign/tree/main/UI-features)
       - Highlights on the UI design.
   - [*Code*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Code) 
-      - Code repository.
+      - Code repository and release history.
   - [*Sample data*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Sample-data)
       - Link to download sample data. Includes sample input and output data. 
   - [*Pilot study*](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/pilot_study)
