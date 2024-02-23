@@ -1,7 +1,8 @@
 # Technical Paper: **Diverse-Assign**
 
-*Diverse-Assign* is a constraint optimisation programme for maximising diversity of group assignments.  This page covers the technical background and explains its method. It also introduces the pseudocode and key innovations. 
+*Diverse-Assign* is a constraint optimisation programme for maximising diversity of group assignments.  This page covers the technical background and explains its method. It also introduces the pseudocode and key innovations.
 
+This paper covers *Diverse-Assign* v.0.3.0.
 
 ## Page overview
 -	[Background](#back)
@@ -383,11 +384,11 @@ If the domain of the final element in unclosed AC3 fails satisfaction, unclosed 
 
 Firstly, the given constraint (prohibition against homogeneity) is only applied within a domain. AC3’s comparison between pairs of domains adds a duplicate process for each domain. Evaluating the duplicate process increases the time, while tracking another set of elements for the duplicate adds space complexity.
 
-Secondly, unclosed AC3 swap-search has a lower time complexity than AC3 in this problem. Unclosed AC3 is O(</em>2 <sub>n</sub>C<sub>2</sub></em>) v.s. AC3’s O(<em><sub>n</sub>C<sub>n / no. of groups</sub></em>). This has to do with diversity being a function of both the variety of attributes in a feature as well as the attribute’s proportion to the population. In both algorithms, as the composition of a domain changes with each allocation or assignment, diversity for the entire domain must re-calculated. This means that any node backtracking in AC3 has to be revisited and tested to check for the change in diversity.
+Secondly, unclosed AC3 swap-search has a lower time complexity than AC3 in this problem. Unclosed AC3 is O(<em>2 <sub>n</sub>C<sub>2</sub></em>) v.s. AC3’s O(<em><sub>n</sub>C<sub>n / no. of groups</sub></em>). This has to do with diversity being a function of both the variety of attributes in a feature as well as the attribute’s proportion to the population. In both algorithms, as the composition of a domain changes with each allocation or assignment, diversity for the entire domain must re-calculated. This means that any node backtracking in AC3 has to be revisited and tested to check for the change in diversity.
 
 In contrast, for unclosed AC3, the number of changes is determined by the number of pairs to swap. The swap is always 2 pairs of elements, across the population. (O(<em>2<sub>n</sub>C<sub>2</sub></em>).) 
 
-Note, in *Diverse-Assign*, prior to unclosed AC3, the initial provisional assignments are pre-sorted to remove homogenous features in any group. This prevents unclosed AC3 inheriting elements in a group with homogenous features, triggering a search restart. While pre-sorting adds time complexity, it halves unclosed AC3’s time complexity, by avoiding a restart. In *Diverse-Assign*, pre-sort is a simple reshuffle until the constraint is satisfied. Even with reshuffling, for large problems, unclosed AC3’s is still smaller than AC3’s O(<em>n C n / no. of groups </sub></em>).
+Note, in *Diverse-Assign*, prior to unclosed AC3, the initial provisional assignments are pre-sorted to remove homogenous features in any group. This prevents unclosed AC3 inheriting elements in a group with homogenous features, triggering a search restart. While pre-sorting adds time complexity, it halves unclosed AC3’s time complexity, by avoiding a restart. In *Diverse-Assign*, pre-sort is a simple reshuffle until the constraint is satisfied. Even with reshuffling, for large problems, unclosed AC3’s is still smaller than AC3’s O(<em><sub>n</sub>C<sub>n / no. of groups</sub></em>)).
 
 #### Unclosed AC3 supports constraint relaxation
 Unclosed AC3 can be used with optimisation to support a relaxed constraint. This relaxation is useful when there is one or more extremely features that are over-dominated by an attribute. The relax constraint is that features can be homogenous in group, but minimised element dominance in any feature. 
@@ -447,7 +448,7 @@ $$
 
 > where cooling schedule = 0.95
 
-In effect, this sets the number of optimisation iterations to exactly 115 iterations. This means that time complexity for optimisation scales with constant time. This makes *Diverse-Assign* appealing even in large problems.
+In effect, this sets the number of optimisation iterations to exactly 115 iterations. This means that time complexity for optimisation scales with constant time. This makes *Diverse-Assign* appealing for optimising large problems.
 
 The number of iteration instance was selected to maintain a target annealing probability for a target delta diversity. The targets are: delta diversity = -0.01, target probability < 0.03, cooling schedule = 0.95:
 
@@ -456,7 +457,7 @@ Target \ temperature = {\frac{\ given \ \Delta ADS}{\ln(target \ probability)}}
 \cdot number \ of \ iteration \ instances  = \log_{target \ temperature}{cooling \ schedule}
 $$
 
-In other words, fixes the cooling schedule to a target response sensitivity to delta diversity. There is a 0.03 probability to look for alternate solutions, when the changes in diversity as small as -0.01, upon the 115th iteration.
+In other words, the cooling schedule fix the number of instancs to a desired sensitivity to delta diversity. There is a 0.03 probability to look for alternate solutions, given a diversity as small as -0.01, upon the 115<sup>th</sup> iteration.
 
 ### Algorithm: Random restart hill-climbing 
 Hill-climbing’s limitation is its tendency to get trapped at a sub-optimal solution. This happens when the algorithm reaches a local maximum. [(Norvig and Russell, 2021)](#HILL)  A local maximum is the solution with the best result, within the direction of search. Despite multiple attempts in the current search space, the attempts converge on the plateau for that local search space. Changing the direction or local search space lead to an even higher local maximum. The ideal outcome is to find the global maximum; highest local maximum across every possible solution. Alternatively, the algorithm can also remain trapped at a plateau. A plateau forms when the alternative solutions yield the same score.
