@@ -69,5 +69,6 @@ Corrections to documentation or code are greatly appreciated :)
 
 ### Future work 
 
-- Enhance heuristics
+- Enhance heuristics.
+- Develop weights to modulate the importance of select features or attributes.
 - Refactor code into OOP for easier maintenance.
