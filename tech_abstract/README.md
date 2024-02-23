@@ -501,9 +501,9 @@ Testing this heuristic and induction through mathematical modelling might discov
 
 A [pilot study](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/pilot_study/README.md) found *Diverse-Assign* to have strong performance, with consistent and reproducible results. Nonetheless, *Diverse-Assign* has limitations.
 
-While *Diverse-Assign* can greatly optimise group diversity and achieve convergence, more study is need to determine whether this is the global maximum. 
+Tests show that *Diverse-Assign* can greatly optimise group diversity and achieve convergence with low variance. However, more study is need to determine maximum convergence includes the global maximum. 
 
-Also, while the [pilot study](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/pilot_study/README.md) found the current design to perform well in a broad range of data topology, the study also found that different algorithms perform performed  better in certain range of topologies. A heuristic could be designed to analyse the data topology and select the most efficient and effective optimisation algorithms. 
+Also, while the [pilot study](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/pilot_study/README.md) found the current design to perform well in a broad range of data topology, the study also found that different algorithms perform performed better in certain range of topologies. A heuristic could be designed to analyse the data topology and select the most efficient and effective optimisation algorithms. 
 
 *Diverse-Assign’s* current heuristics has performed well, but there is room for improvement. Mathematical modelling and more detailed experiments would be helpful to guide enhancements.
 
