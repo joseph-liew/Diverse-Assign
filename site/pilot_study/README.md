@@ -66,7 +66,7 @@ For all experiments, sample size was *(n) = 30*. A complete run of an algorithm 
 Time taken by each algorithm was compared using the number of iteration instances taken. This enabled the comparison of different algorithms on the same time-points. Each iteration instance was numbered from 1 to 115 in ascending order, indicating the sequence of instances in a sample. 
 
 ### Algorithms
-Algorithms and heuristic components tested were based on *Diverse-Assign* v.0.3.0a. A total of eight algorithms were tested (six test algorithms and their variants; plus two control algorithms). For control, pseudorandom shuffling and *Diverse-Assign’s* unclosed AC3 were used. [Refer to Table D to learn more about each algorithm's characteristics](#TABLE_D) The code and reference python packages used can be [found here](https://github.com/joseph-liew/Diverse-Assign/blob/main/Main-code/variants/DiverseAssignv0.3.0b.py). Reference python version was v.3.11.7.
+Algorithms and heuristic components tested were based on *Diverse-Assign* v.0.3.0a. A total of eight algorithms were tested (six test algorithms and their variants; plus two control algorithms). For control, pseudorandom shuffling and *Diverse-Assign’s* unclosed AC3 were used. [Refer to Table D to learn more about each algorithm's characteristics](#TABLE_D) The code and reference python packages used can be [found here](https://github.com/joseph-liew/Diverse-Assign/blob/main/Main-code/variants/DiverseAssignv0.3.0b.py). A flowchart summarising the algorithms are found [here](https://github.com/joseph-liew/Diverse-Assign/edit/main/tech_abstract/README.md#causal). The pseudocode can be viewed [here](https://github.com/joseph-liew/Diverse-Assign/edit/main/tech_abstract/README.md#pseudo).Reference python version was v.3.11.7.
 
 <a name="TABLES_D"></a>**Table D: Algorithms tested and their characteristics.**
 ![Table D: Algorithms tested and their characteristics.](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/pilot_study/pilot_v030_tableD.PNG)
@@ -124,7 +124,7 @@ The Jupyter notebook used to generate the statistical analyses can be [be access
 ## Results
 
 ### Descriptive statistics of maximum delta maxima achieved by each algorithm
-Table E shows summarises each algorithm’s maximum delta maxima. <a name="TABLES_E"></a>[(Table E can be downloaded from here.)](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/spreadsheets/pilot_study/Table_E.xlsx) The following results are presented in Table E: mean maximum delta maxima, quartiles, *t*-distribution SEM and 95% Confidence Interval (95% CI), and normality test.
+Table E shows summarises each algorithm’s maximum delta maxima. <a name="TABLES_E"></a>[(Table E can be downloaded from here.)](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/spreadsheets/pilot_study) The following results are presented in Table E: mean maximum delta maxima, quartiles, *t*-distribution SEM and 95% Confidence Interval (95% CI), and normality test.
 
 ### Detection of homogenous features in group assignment
 [Table F](#TABLES_F) compares the proportion of solutions where a homogenous feature was present in at least one group. *Diverse-Assign* and all algorithms using the unclosed AC3 algorithm were effective in ensuring the no-homogenous features constraint satisfaction. None of these algorithms had any homogenous features present. Depending on data topology, *Diverse-Assign* outperformed pseudorandom control by as much as 74.7%.
