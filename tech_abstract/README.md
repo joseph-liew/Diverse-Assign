@@ -152,7 +152,7 @@ do heuristic check, whether relaxation of no-homogenous-feature-in-any-group req
 		disable constraint propagation
 
 if shuffle group assignment is enabled:
-	assign groups sequentially by stratification, to Input Dataframe or overwrite Solution
+	assign groups sequentially, to Input Dataframe or overwrite Solution
 	if constraint propagation enabled, re-shuffle until constraint is satisfied.
 
 
