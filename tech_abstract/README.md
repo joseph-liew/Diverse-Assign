@@ -448,7 +448,7 @@ $$
 
 > where cooling schedule = 0.95
 
-In effect, this sets the number of optimisation iterations to exactly 115 iterations. This means that time complexity for optimisation scales with constant time. This makes *Diverse-Assign* appealing for optimising large problems.
+In effect, this sets the number of optimisation iterations to exactly 115 iterations.
 
 The number of iteration instance was selected to maintain a target annealing probability for a target delta diversity. The targets are: delta diversity = -0.01, target probability < 0.03, cooling schedule = 0.95:
 
@@ -458,6 +458,8 @@ Target \ temperature = {\frac{\ given \ \Delta ADS}{\ln(target \ probability)}}
 $$
 
 In other words, the cooling schedule fix the number of instancs to a desired sensitivity to delta diversity. There is a 0.03 probability to look for alternate solutions, given a diversity as small as -0.01, upon the 115<sup>th</sup> iteration.
+
+Note that regardless of the number of elements (*n*), the number of optimisation iterations and sensitivity remains constant. This makes *Diverse-Assign* appealing to use for large problems. Regardless of the problem size, the programme achieves constant sensitivity with constant number of iterations.
 
 ### Algorithm: Random restart hill-climbing 
 Hill-climbing’s limitation is its tendency to get trapped at a sub-optimal solution. This happens when the algorithm reaches a local maximum. [(Norvig and Russell, 2021)](#HILL)  A local maximum is the solution with the best result, within the direction of search. Despite multiple attempts in the current search space, the attempts converge on the plateau for that local search space. Changing the direction or local search space lead to an even higher local maximum. The ideal outcome is to find the global maximum; highest local maximum across every possible solution. Alternatively, the algorithm can also remain trapped at a plateau. A plateau forms when the alternative solutions yield the same score.
