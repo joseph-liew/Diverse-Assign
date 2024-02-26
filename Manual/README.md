@@ -164,6 +164,6 @@ Want to collaborate? Please contact us:
 
 <br>
 
-To learn more about about the algorithms, see the Technical Abstract at: https://github.com/joseph-liew/Diverse-Assign/tree/main/tech_abstract
+To learn more about the algorithms, see the Technical Abstract at: https://github.com/joseph-liew/Diverse-Assign/tree/main/tech_abstract
 
 Sample input data was generated using "generatedata.com". Credits to the team at https://github.com/benkeen/generatedata for creating this magnificent mock data generator.
