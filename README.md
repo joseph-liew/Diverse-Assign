@@ -14,7 +14,7 @@ Links:
   - [*Manual*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Manual)
       - How-to-use guide.
   - [*Code*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Code) 
-      - Code repository and release history.
+      - Code repository and version history.
   - [*Sample data*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Sample-data)
       - Link to download sample data. Includes sample input and output data. 
   - [*Pilot study*](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/pilot_study)
