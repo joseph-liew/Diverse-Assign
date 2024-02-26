@@ -5,6 +5,7 @@ Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Divers
 **Diverse-Assign** is an AI tool to effortlessly create highly diverse groups, leveraging on [evidence-backed algorithms](https://github.com/joseph-liew/Diverse-Assign/tree/main/site/pilot_study). Effortlessly increase your group diversity by up to 15,900x. No more filtering and sorting for hours. **Diverse-Assign** can group anything and any feature – people, items, shopping carts, diet preferences… If there’s a profile, it can group it.  
 
 *Just prepare a CSV of your participant/item profiles. Let AI handle the rest.* Below is an example. You can use anything for the features!
+
 ![Just load a table of your participant/item profiles. Let AI handle the rest](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/sample_input.PNG)
 
 Links:
