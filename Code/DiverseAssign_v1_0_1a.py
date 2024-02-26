@@ -1356,7 +1356,7 @@ if getattr(sys, 'frozen', False):
     base_path = os.path.dirname(sys.executable)
 else:
     # Running normally as a Python script
-    base_path = os.path.abspath(__file__)
+    base_path = os.path.dirname(os.path.abspath(__file__))
 
 os.chdir(base_path)
 os.getcwd()
