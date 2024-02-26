@@ -6,7 +6,7 @@ This paper covers *Diverse-Assign* v.0.3.0.
 
 ## Page overview
 -	[Background](#back)
--	[Key features innovations](#key)
+-	[Key features and innovations](#key)
 -	[Method: how *Diverse-Assign* works](#method)
 -	[Quantifying diversity](#ads)
 -	[Pseudocode](#pseudo)
