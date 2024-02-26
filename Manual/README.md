@@ -47,9 +47,13 @@
 6) Done!
 
 <br>
+
 The app adds one column to the end (“right”) of the CSV file. The column is “assigned_group”. This column indicates the assigned groups. The groups are numbered from 1 to the number of groups you wanted. E.g. If you wanted 10 groups, the rows are assigned ‘1’ to ‘10’.
 
+<br>
+
 *E.g. of a completed group assignment. The app has added the yellow column on the right of the CSV. These are the group assignments.*
+
 ![E.g. of a completed group assignment. The app has added the yellow column on the right of the CSV. These are the group assignments.](https://github.com/joseph-liew/Diverse-Assign/blob/main/site/images/added_columns.png)
 
 You can also try out the below demo.
