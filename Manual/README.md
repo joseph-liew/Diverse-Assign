@@ -20,11 +20,11 @@
 
 <br>
 
-2) Save the CSV file to the same folder as this app (“DiverseAssign_v1.0.1a.exe”).
+2) Save the CSV file to the same folder as this app (“DiverseAssign_v1.0.1a”).
 
 <br>
 
-3) Open the app “DiverseAssign_v1.0.1a.exe”
+3) Open the app “DiverseAssign_v1.0.1a”
 
 <br>
 
