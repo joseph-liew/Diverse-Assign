@@ -10,7 +10,8 @@ Licence: Open-source [*GNU GPL Version 3*](https://github.com/joseph-liew/Divers
 Links:
   - [*Windows and Mac download*](https://github.com/joseph-liew/Diverse-Assign/releases)
       - For non-technical users. Download the app version. No coding and installation required.    
-  - [*Python script download*](https://github.com/joseph-liew/Diverse-Assign/releases)
+  - [*Python script*](https://github.com/joseph-liew/Diverse-Assign/blob/main/Code/DiverseAssign_v1_0_1a.py)
+      - For users who want to run the python script on their IDE or terminal. 
   - [*Manual*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Manual)
       - How-to-use guide.
   - [*Code*](https://github.com/joseph-liew/Diverse-Assign/tree/main/Code) 
